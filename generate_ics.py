@@ -207,7 +207,21 @@ def scrape_london_stadium() -> list[ParkEvent]:
             print(f"[warn] could not fetch {url}: {exc}", file=sys.stderr)
             continue
 
-        link_lookup = build_link_lookup(soup, url)
+        # NOTE: on this site the event title is plain text, not a link - only
+        # "Book now" and "More info" are actual anchors. So instead of
+        # looking up a href by matching the title's text (which never
+        # exists as anchor text here), we walk the "More info" anchors
+        # directly and pull the title out of the same card/container.
+        more_info_links = [
+            a for a in soup.find_all("a", href=True)
+            if a.get_text(strip=True).lower() == "more info"
+        ]
+
+        # Walk the flattened text lines as before to get date/time/title,
+        # then match each event to the Nth "More info" link in document
+        # order (cards appear in the same order in both the text stream and
+        # the anchor list).
+        info_link_iter = iter(more_info_links)
 
         i = 0
         while i < len(lines):
@@ -224,9 +238,14 @@ def scrape_london_stadium() -> list[ParkEvent]:
             title = ""
             j = i + 1
             window_end = min(i + 6, len(lines))
+            hit_more_info = False
             while j < window_end:
                 line = lines[j]
                 low = line.lower()
+                if low == "more info":
+                    hit_more_info = True
+                    j += 1
+                    break
                 if low in SKIP_LINE_VALUES:
                     j += 1
                     continue
@@ -252,7 +271,16 @@ def scrape_london_stadium() -> list[ParkEvent]:
                 continue
             seen.add(key)
 
-            href = link_lookup.get(title, "")
+            href = ""
+            if hit_more_info:
+                next_link = next(info_link_iter, None)
+                if next_link is not None:
+                    raw_href = next_link["href"]
+                    if raw_href.startswith("http"):
+                        href = raw_href
+                    elif raw_href.startswith("/"):
+                        href = "https://www.london-stadium.com" + raw_href
+
             category = forced_category or "Event"
 
             events.append(
@@ -339,7 +367,185 @@ def scrape_qeop() -> list[ParkEvent]:
 
 
 # ---------------------------------------------------------------------------
-# Newham Council road/traffic notices via The Gazette's public API
+# Queen Elizabeth Olympic Park - Residents Information notices
+# ---------------------------------------------------------------------------
+# This page is where things like "Wing Fest London 2026 | Friday 24th,
+# Saturday 25th & Sunday 26th July" actually live - it's the venue's own
+# advance notice to residents, and it's often the earliest and most detailed
+# public source for exactly the kind of footfall/closure info this calendar
+# cares about. Each notice is either:
+#   - a heading formatted "Title | [Location |] Date info", or
+#   - a bullet point under a category heading, same "Title | Date info" shape
+# and is usually followed by a paragraph linking to a PDF "resident letter"
+# with the text "here". We capture the title/dates/link from the page
+# itself. We deliberately do NOT fetch the linked PDFs: they're hosted on a
+# separate subdomain (live-qeop.pantheonsite.io) whose robots.txt disallows
+# automated access, and that's worth respecting rather than working around.
+# The link is still included in each event so you can open it yourself.
+
+QEOP_RESIDENTS_URL = "https://www.queenelizabetholympicpark.co.uk/residents-information"
+
+ORDINAL_DAY_RE = re.compile(r"\b(\d{1,2})(?:st|nd|rd|th)\b", re.IGNORECASE)
+MONTH_NAME_RE = re.compile(rf"\b({MONTH_RE_PART})\b", re.IGNORECASE)
+DOT_DATE_RE = re.compile(r"(\d{2})\.(\d{2})\.(\d{2})")
+
+
+def _parse_ordinal_day_month_list(date_part: str, ref_date: date | None = None):
+    """Parses strings like 'Friday 24th, Saturday 25th & Sunday 26th July'
+    (no year given) into (start_date, end_date), picking whichever year
+    keeps the date closest to today rather than in the past."""
+    ref_date = ref_date or date.today()
+    day_matches = list(ORDINAL_DAY_RE.finditer(date_part))
+    month_matches = list(MONTH_NAME_RE.finditer(date_part))
+    if not day_matches or not month_matches:
+        return None
+
+    dates_found = []
+    for dm in day_matches:
+        day = int(dm.group(1))
+        candidates = [mm for mm in month_matches if mm.start() >= dm.end()]
+        month_m = min(candidates, key=lambda mm: mm.start()) if candidates else month_matches[-1]
+        month_num = datetime.strptime(month_m.group(1)[:3], "%b").month
+        year = ref_date.year
+        try:
+            d = date(year, month_num, day)
+        except ValueError:
+            continue
+        if d < ref_date - timedelta(days=60):
+            try:
+                d = date(year + 1, month_num, day)
+            except ValueError:
+                pass
+        dates_found.append(d)
+
+    if not dates_found:
+        return None
+    return min(dates_found), max(dates_found)
+
+
+def _parse_dot_date_range(date_part: str):
+    """Parses 'DD.MM.YY - DD.MM.YY' / 'DD.MM.YY to DD.MM.YY' style ranges."""
+    matches = DOT_DATE_RE.findall(date_part)
+    if not matches:
+        return None
+    try:
+        dd1, mo1, yy1 = matches[0]
+        dd2, mo2, yy2 = matches[-1]
+        start = date(2000 + int(yy1), int(mo1), int(dd1))
+        end = date(2000 + int(yy2), int(mo2), int(dd2))
+    except ValueError:
+        return None
+    if end < start:
+        start, end = end, start
+    return start, end
+
+
+def _try_parse_pipe_event(text: str):
+    """Splits 'Title | Date info' or 'Title | Location | Date info' style
+    lines. Returns (title, location_or_None, date_part) or (None, None, None)
+    if the text doesn't look like this pattern at all."""
+    if "|" not in text:
+        return None, None, None
+    parts = [p.strip() for p in text.split("|")]
+    if len(parts) == 2:
+        return parts[0], None, parts[1]
+    if len(parts) >= 3:
+        return parts[0], parts[1], "|".join(parts[2:]).strip()
+    return None, None, None
+
+
+def _parse_date_part(date_part: str):
+    return _parse_dot_date_range(date_part) or _parse_ordinal_day_month_list(date_part)
+
+
+def _default_notice_location(category_context: str, title: str) -> str:
+    blob = f"{category_context} {title}".lower()
+    if "stadium" in blob:
+        return LONDON_STADIUM_LOCATION
+    return QEOP_LOCATION
+
+
+def scrape_qeop_residents_notices() -> list[ParkEvent]:
+    events: list[ParkEvent] = []
+    try:
+        resp = requests.get(QEOP_RESIDENTS_URL, headers=HEADERS, timeout=30)
+        resp.raise_for_status()
+    except requests.RequestException as exc:
+        print(f"[warn] could not fetch {QEOP_RESIDENTS_URL}: {exc}", file=sys.stderr)
+        return events
+
+    soup = BeautifulSoup(resp.text, "html.parser")
+    for tag in soup(["script", "style", "nav", "footer", "noscript"]):
+        tag.decompose()
+
+    elements = soup.find_all(["h2", "h3", "h4", "p", "li"])
+    current_category_context = ""
+    pending: list[ParkEvent] = []
+
+    def flush(link_href: str | None):
+        if not pending:
+            return
+        for ev in pending:
+            if link_href:
+                ev.url = link_href
+                ev.restrictions.append(f"Resident letter (PDF, opens on the Park's site): {link_href}")
+            else:
+                ev.restrictions.append(
+                    "No specific resident letter link was found near this notice on the page - "
+                    "check the Residents Information page directly for the latest detail."
+                )
+        events.extend(pending)
+        pending.clear()
+
+    for el in elements:
+        tag = el.name
+        text = re.sub(r"\s+", " ", el.get_text(" ", strip=True)).strip()
+        if not text:
+            continue
+
+        if tag in ("h2", "h3", "h4"):
+            title, location, date_part = _try_parse_pipe_event(text)
+            parsed = _parse_date_part(date_part) if date_part else None
+            if parsed:
+                flush(None)  # safety net: shouldn't normally have leftovers
+                start, end = parsed
+                pending.append(ParkEvent(
+                    title=title, start=start, end=end,
+                    source="Queen Elizabeth Olympic Park (Residents Notices)",
+                    location=location or _default_notice_location(current_category_context, title),
+                    category="Residents notice",
+                ))
+                continue
+            flush(None)
+            current_category_context = text
+
+        elif tag == "li":
+            title, location, date_part = _try_parse_pipe_event(text)
+            parsed = _parse_date_part(date_part) if date_part else None
+            if parsed:
+                start, end = parsed
+                pending.append(ParkEvent(
+                    title=title, start=start, end=end,
+                    source="Queen Elizabeth Olympic Park (Residents Notices)",
+                    location=location or _default_notice_location(current_category_context, title),
+                    category="Residents notice",
+                ))
+
+        elif tag == "p":
+            here_href = None
+            for a in el.find_all("a", href=True):
+                if a.get_text(strip=True).lower().rstrip(".") == "here":
+                    href = a["href"]
+                    if href.startswith("http"):
+                        here_href = href
+                    elif href.startswith("/"):
+                        here_href = "https://www.queenelizabetholympicpark.co.uk" + href
+                    break
+            if here_href:
+                flush(here_href)
+
+    flush(None)
+    return events
 # ---------------------------------------------------------------------------
 # The Gazette (thegazette.co.uk) is the UK's official public record. Its
 # REST API is documented and free to use without an API key:
@@ -600,7 +806,7 @@ def build_description(ev: ParkEvent, severity: str, matched_terms: str) -> str:
         other_info_bits.append(f"Category: {ev.category}")
     other_info = "; ".join(other_info_bits) if other_info_bits else ""
 
-    lines = [
+    body_fields = [
         f"Event Name: {ev.title}",
         f"Event Location: {ev.location or 'Not specified'}",
         f"Event Start Time: {format_time_field(ev.start, ev.event_time)}",
@@ -611,15 +817,18 @@ def build_description(ev: ParkEvent, severity: str, matched_terms: str) -> str:
         ),
         f"Busyness Factor: {severity.title()}",
         f"Road Restrictions: {restrictions_text}",
-        "",
         f"Other Information: {other_info}",
-        "",
-        "--",
+    ]
+    footer_fields = [
         f"Source of data: {ev.source}",
         f"Website Link: {ev.url or 'Not available'}",
         f"Matched terms: {matched_terms}",
     ]
-    return escape_text("\n".join(lines))
+
+    # Blank line between every field, and an extra blank line under the "--"
+    # divider (two blank lines total before "Source of data").
+    text = "\n\n".join(body_fields) + "\n\n--\n\n\n" + "\n\n".join(footer_fields)
+    return escape_text(text)
 
 
 def build_ics(events: list[ParkEvent]) -> str:
@@ -675,6 +884,7 @@ def main() -> None:
     fresh_events: list[ParkEvent] = []
     fresh_events.extend(scrape_london_stadium())
     fresh_events.extend(scrape_qeop())
+    fresh_events.extend(scrape_qeop_residents_notices())
     fresh_events.extend(scrape_newham_gazette_notices())
 
     if not fresh_events:

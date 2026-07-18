@@ -38,6 +38,17 @@ Park. Unlike the venue listings, these are permanent public records, so
 this part of the calendar's history is complete and accurate from day one
 rather than something that builds up gradually.
 
+**The Park's own Residents Information page** — this is often the
+earliest and most detailed public source for exactly the kind of thing
+this calendar is meant to catch (things like a named multi-day event and
+its dates, e.g. "Wing Fest London 2026 | Friday 24th, Saturday 25th &
+Sunday 26th July"). Each notice there is usually followed by a link to a
+PDF "resident letter" with fuller detail; that link is included in the
+event's description, but the PDF itself isn't downloaded and parsed,
+because that file host's robots.txt disallows automated access - so the
+title, dates, and location come from the page itself, and the letter is
+left as a link for you to open directly.
+
 ## How severity is worked out
 
 Each event's title, category, and any associated restriction notice are

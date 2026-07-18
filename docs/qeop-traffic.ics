@@ -4,7 +4,7 @@ PRODID:-//Jack//QEOP Traffic Watch//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:QEOP & London Stadium Traffic Watch
-X-WR-CALDESC:High footfall\, road closure and parking-restriction risk days around Queen Elizabeth Olympic Park and London Stadium.
+X-WR-CALDESC:High footfall\, road closure and parking-restriction risk days around Queen Elizabeth Olympic Park and London Stadium\, plus a rolling 6-month history.
 X-WR-TIMEZONE:Europe/London
 REFRESH-INTERVAL;VALUE=DURATION:P7D
 X-PUBLISHED-TTL:P7D

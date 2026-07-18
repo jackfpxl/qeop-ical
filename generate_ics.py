@@ -2,39 +2,46 @@
 """
 Queen Elizabeth Olympic Park / London Stadium traffic-impact calendar generator.
 
-Scrapes the official London Stadium and Queen Elizabeth Olympic Park "what's
-on" pages, works out which events are likely to cause high footfall,
-congestion, or parking/road restrictions around the Park, and writes those
-out as all-day events into a single .ics file.
+Sources:
+  - london-stadium.com                  (upcoming events)
+  - queenelizabetholympicpark.co.uk     (upcoming events)
+  - The Gazette (thegazette.co.uk)      (Newham Council road/traffic notices,
+                                          official UK public record API -
+                                          covers both past and upcoming
+                                          closures/restrictions)
 
-Designed to be run on a schedule (see .github/workflows/update.yml) so the
-resulting .ics file is a "live" subscription: any calendar app that
-subscribes to its raw URL will pick up new/changed events on its own
-refresh cycle.
+Because the two venue websites only ever list what's still upcoming, this
+script keeps its own rolling history: every event it has ever scraped is
+stored in docs/history_archive.json and re-merged on every run. That's what
+lets the calendar hold a genuine 6-months-back view even though the source
+sites themselves don't publish one. The Newham/Gazette source is different:
+it's a real public record, so its historical notices are genuinely backfilled
+from day one, not just accumulated going forward.
 
 Run manually:
     pip install -r requirements.txt
     python generate_ics.py
 
 Output:
-    docs/qeop-traffic.ics
+    docs/qeop-traffic.ics       <- subscribe to this
+    docs/history_archive.json   <- internal state, do not edit by hand
 
 NOTE ON ROBUSTNESS
 -------------------
-Both source sites are ordinary marketing pages, not APIs, so this parses
-their rendered text rather than pinning to specific CSS class names (those
-tend to change on redeploys and would silently break a more "precise"
-scraper). If a source site is redesigned enough that no events are found,
-the script leaves the previously published .ics file untouched rather than
-publishing an empty calendar - see `main()`.
+The two venue sites are ordinary marketing pages, not APIs, so this parses
+their rendered text rather than pinning to specific CSS class names. If a
+run finds nothing new, previously archived events are still published -
+the calendar never goes blank because of a temporary site change.
 """
 
 from __future__ import annotations
 
 import hashlib
+import json
 import re
 import sys
-from dataclasses import dataclass, field
+import time
+from dataclasses import dataclass, field, asdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
@@ -43,12 +50,16 @@ from bs4 import BeautifulSoup
 
 OUTPUT_DIR = Path(__file__).parent / "docs"
 OUTPUT_FILE = OUTPUT_DIR / "qeop-traffic.ics"
+ARCHIVE_FILE = OUTPUT_DIR / "history_archive.json"
+
+HISTORY_DAYS = 183  # ~6 months back
+HORIZON_DAYS = 183  # ~6 months forward
 
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
         "(KHTML, like Gecko) Chrome/124.0 Safari/537.36 "
-        "QEOP-TrafficCal/1.0 (personal, non-commercial event calendar)"
+        "QEOP-TrafficCal/1.1 (personal, non-commercial event calendar)"
     )
 }
 
@@ -61,10 +72,20 @@ TIME_RE = re.compile(r"\b(\d{1,2}:\d{2}\s*(?:AM|PM))\b", re.IGNORECASE)
 DATE_RANGE_RE = re.compile(r"(\d{2})/(\d{2})/(\d{4})\s*-\s*(\d{2})/(\d{2})/(\d{4})")
 SINGLE_SLASH_DATE_RE = re.compile(r"\b(\d{2})/(\d{2})/(\d{4})\b")
 
+# Matches phrases like "from Monday 24th February 2025 until Sunday 9th
+# March 2025" that appear in Gazette traffic order text.
+PROSE_DATE_RANGE_RE = re.compile(
+    rf"from\s+\w+\s+(\d{{1,2}})\w{{0,2}}\s+({MONTH_RE_PART})\s+(\d{{4}})\s+"
+    rf"(?:until|to)\s+\w+\s+(\d{{1,2}})\w{{0,2}}\s+({MONTH_RE_PART})\s+(\d{{4}})",
+    re.IGNORECASE,
+)
+
 SKIP_LINE_VALUES = {
     "book now", "more info", "read more", "sign up now", "see all",
     "getting here", "explore the park", "what's on", "plan your visit",
 }
+
+SEVERITY_DOT = {"LOW": "\U0001F7E2", "MEDIUM": "\U0001F7E1", "HIGH": "\U0001F534"}
 
 
 def fetch_text_lines(url: str) -> tuple[list[str], BeautifulSoup]:
@@ -102,17 +123,37 @@ class ParkEvent:
     title: str
     start: date
     end: date  # inclusive
-    source: str  # "London Stadium" or "Queen Elizabeth Olympic Park"
+    source: str
+    location: str = ""
     category: str = ""
     event_time: str = ""  # human readable, e.g. "11:00 AM"
     url: str = ""
     restrictions: list[str] = field(default_factory=list)
-    severity: str = "LOW"
-    severity_reason: str = ""
 
     def uid(self) -> str:
         raw = f"{self.source}|{self.title}|{self.start.isoformat()}"
         return hashlib.sha1(raw.encode("utf-8")).hexdigest() + "@qeop-traffic-cal"
+
+    def to_record(self) -> dict:
+        d = asdict(self)
+        d["start"] = self.start.isoformat()
+        d["end"] = self.end.isoformat()
+        d["uid"] = self.uid()
+        return d
+
+    @staticmethod
+    def from_record(rec: dict) -> "ParkEvent":
+        return ParkEvent(
+            title=rec["title"],
+            start=date.fromisoformat(rec["start"]),
+            end=date.fromisoformat(rec["end"]),
+            source=rec["source"],
+            location=rec.get("location", ""),
+            category=rec.get("category", ""),
+            event_time=rec.get("event_time", ""),
+            url=rec.get("url", ""),
+            restrictions=rec.get("restrictions", []),
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -123,10 +164,12 @@ HIGH_KEYWORDS = [
     "concert", "festival", "west ham", "final", "nfl", "athletics meet",
     "world tour", "attro", "road closure", "marathon", "boxing",
     "world cup", "international", "cup final", "wing fest", "m72",
+    "prohibition of traffic", "road closed",
 ]
 MEDIUM_KEYWORDS = [
     "community", "family", "run", "race", "tournament", "match", "fixture",
-    "sports", "sport", "circus live",
+    "sports", "sport", "circus live", "waiting and loading", "parking",
+    "temporary traffic", "diversion",
 ]
 
 
@@ -136,10 +179,10 @@ def classify_severity(title: str, category: str, notes: str) -> tuple[str, str]:
     hits_medium = sorted({k for k in MEDIUM_KEYWORDS if k in blob})
 
     if hits_high:
-        return "HIGH", f"Matched high-impact terms: {', '.join(hits_high)}"
+        return "HIGH", ", ".join(hits_high)
     if hits_medium:
-        return "MEDIUM", f"Matched moderate-impact terms: {', '.join(hits_medium)}"
-    return "LOW", "No high/medium traffic-impact keywords matched"
+        return "MEDIUM", ", ".join(hits_medium)
+    return "LOW", "none matched (default)"
 
 
 # ---------------------------------------------------------------------------
@@ -150,6 +193,7 @@ LONDON_STADIUM_SOURCES = [
     ("https://www.london-stadium.com/events/all.html", ""),
     ("https://www.london-stadium.com/events/west-ham.html", "Sport - West Ham United"),
 ]
+LONDON_STADIUM_LOCATION = "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST"
 
 
 def scrape_london_stadium() -> list[ParkEvent]:
@@ -176,9 +220,6 @@ def scrape_london_stadium() -> list[ParkEvent]:
             month = datetime.strptime(month_name[:3], "%b").month
             event_date = date(int(year), month, int(day))
 
-            # Look ahead a few lines for a time, then the title (the first
-            # line that isn't a nav/boilerplate phrase and isn't itself a
-            # date/time line), stopping once we hit "Book now"/"More info".
             event_time = ""
             title = ""
             j = i + 1
@@ -220,6 +261,7 @@ def scrape_london_stadium() -> list[ParkEvent]:
                     start=event_date,
                     end=event_date,
                     source="London Stadium",
+                    location=LONDON_STADIUM_LOCATION,
                     category=category,
                     event_time=event_time,
                     url=href,
@@ -234,6 +276,7 @@ def scrape_london_stadium() -> list[ParkEvent]:
 # ---------------------------------------------------------------------------
 
 QEOP_URL = "https://www.queenelizabetholympicpark.co.uk/whats-on"
+QEOP_LOCATION = "Queen Elizabeth Olympic Park, London E20"
 
 
 def scrape_qeop() -> list[ParkEvent]:
@@ -262,8 +305,6 @@ def scrape_qeop() -> list[ParkEvent]:
             d1, mo1, y1 = single.groups()
             start = end = date(int(y1), int(mo1), int(d1))
 
-        # The title is usually the nearest preceding non-boilerplate line
-        # (a heading like "Black to the Future").
         title = ""
         for back in range(1, 4):
             k = idx - back
@@ -288,6 +329,7 @@ def scrape_qeop() -> list[ParkEvent]:
                 start=start,
                 end=end,
                 source="Queen Elizabeth Olympic Park",
+                location=QEOP_LOCATION,
                 category="Event",
                 url=href,
             )
@@ -297,7 +339,152 @@ def scrape_qeop() -> list[ParkEvent]:
 
 
 # ---------------------------------------------------------------------------
-# Restriction / road-closure notes (standing info from London Stadium)
+# Newham Council road/traffic notices via The Gazette's public API
+# ---------------------------------------------------------------------------
+# The Gazette (thegazette.co.uk) is the UK's official public record. Its
+# REST API is documented and free to use without an API key:
+# https://github.com/TheGazette/DevDocs/blob/master/notice/notice-feed.md
+#
+# We search a 1.5 mile radius around Queen Elizabeth Olympic Park across a
+# rolling window (today - HISTORY_DAYS to today + HORIZON_DAYS) and keep any
+# notice whose text mentions traffic/road-closure terms. This is what
+# supplies genuine *historical* road-restriction data, since the venue
+# websites don't publish anything about the past.
+
+GAZETTE_API = "https://www.thegazette.co.uk/all-notices/notice/data.json"
+QEOP_POSTCODE = "E20 2ST"
+GAZETTE_SEARCH_RADIUS_MILES = 1.5
+GAZETTE_KEYWORDS = [
+    "traffic", "road", "highway", "closure", "closed", "prohibit",
+    "diversion", "parking", "waiting", "loading", "footway", "carriageway",
+]
+GAZETTE_MAX_DETAIL_FETCHES = 25  # cap full-text lookups per run, be a good citizen
+GAZETTE_REQUEST_DELAY_SECONDS = 1.0
+
+
+def _looks_traffic_related(title: str, content: str) -> bool:
+    blob = f"{title} {content}".lower()
+    return any(k in blob for k in GAZETTE_KEYWORDS)
+
+
+def _extract_location_snippet(title: str, content: str) -> str:
+    """Best-effort short location string from the notice title/content."""
+    # Titles are often like "Olympic Park Avenue, Newham, Temporary
+    # Prohibition of Traffic" - take the bit before the first comma.
+    if "," in title:
+        candidate = title.split(",")[0].strip()
+        if candidate:
+            return f"{candidate}, Newham, London"
+    return "Newham, London (see notice for exact location)"
+
+
+def scrape_newham_gazette_notices() -> list[ParkEvent]:
+    events: list[ParkEvent] = []
+
+    start_date = date.today() - timedelta(days=HISTORY_DAYS)
+    end_date = date.today() + timedelta(days=HORIZON_DAYS)
+
+    page = 1
+    page_size = 50
+    max_pages = 6  # safety cap; ~300 notices is more than enough for this radius
+    detail_fetches_used = 0
+
+    while page <= max_pages:
+        params = {
+            "location-postcode-1": QEOP_POSTCODE,
+            "location-distance-1": GAZETTE_SEARCH_RADIUS_MILES,
+            "start-publish-date": start_date.isoformat(),
+            "end-publish-date": end_date.isoformat(),
+            "results-page-size": page_size,
+            "results-page": page,
+            "sort-by": "latest-date",
+        }
+        try:
+            resp = requests.get(GAZETTE_API, params=params, headers=HEADERS, timeout=30)
+            resp.raise_for_status()
+            data = resp.json()
+        except (requests.RequestException, ValueError) as exc:
+            print(f"[warn] Gazette API request failed (page {page}): {exc}", file=sys.stderr)
+            break
+
+        entries = data.get("entry", [])
+        if isinstance(entries, dict):  # single-result responses aren't wrapped in a list
+            entries = [entries]
+        if not entries:
+            break
+
+        for entry in entries:
+            title = re.sub(r"\s+", " ", (entry.get("title") or "")).strip()
+            content_html = entry.get("content", "") or ""
+            content_text = BeautifulSoup(content_html, "html.parser").get_text(" ", strip=True)
+
+            if not _looks_traffic_related(title, content_text):
+                continue
+
+            published_str = entry.get("published", "")
+            try:
+                published_date = datetime.fromisoformat(published_str.replace("Z", "+00:00")).date()
+            except ValueError:
+                continue
+
+            notice_url = ""
+            for link in entry.get("link", []):
+                href = link.get("@href", "")
+                if href and "id/notice" not in href:
+                    notice_url = href
+                    break
+
+            start_d, end_d = published_date, published_date
+            full_text = content_text
+
+            # Try to get the real closure date range by fetching the full
+            # notice text (the search snippet is truncated with "…"). Capped
+            # so a single run can't hammer the site.
+            if notice_url and detail_fetches_used < GAZETTE_MAX_DETAIL_FETCHES:
+                try:
+                    time.sleep(GAZETTE_REQUEST_DELAY_SECONDS)
+                    detail_resp = requests.get(notice_url, headers=HEADERS, timeout=30)
+                    detail_resp.raise_for_status()
+                    detail_soup = BeautifulSoup(detail_resp.text, "html.parser")
+                    for tag in detail_soup(["script", "style", "nav", "footer"]):
+                        tag.decompose()
+                    full_text = detail_soup.get_text(" ", strip=True)
+                    detail_fetches_used += 1
+                except requests.RequestException:
+                    pass  # fall back to the truncated snippet, not fatal
+
+            range_m = PROSE_DATE_RANGE_RE.search(full_text)
+            if range_m:
+                d1, mo1, y1, d2, mo2, y2 = range_m.groups()
+                try:
+                    start_d = date(int(y1), datetime.strptime(mo1[:3], "%b").month, int(d1))
+                    end_d = date(int(y2), datetime.strptime(mo2[:3], "%b").month, int(d2))
+                except ValueError:
+                    start_d, end_d = published_date, published_date
+
+            events.append(
+                ParkEvent(
+                    title=title or "Newham traffic/road notice",
+                    start=start_d,
+                    end=max(end_d, start_d),
+                    source="Newham Council (The Gazette)",
+                    location=_extract_location_snippet(title, full_text),
+                    category="Council traffic notice",
+                    url=notice_url,
+                    restrictions=[full_text[:600] + ("…" if len(full_text) > 600 else "")],
+                )
+            )
+
+        total = int(data.get("f:total", 0) or 0)
+        if page * page_size >= total:
+            break
+        page += 1
+
+    return events
+
+
+# ---------------------------------------------------------------------------
+# Restriction notes for venue events (Newham notices already carry their own)
 # ---------------------------------------------------------------------------
 
 RESIDENTS_INFO_URL = "https://www.london-stadium.com/residents-information/index.html"
@@ -314,17 +501,62 @@ STANDING_RESTRICTION_NOTE = (
 
 def enrich_with_restrictions(events: list[ParkEvent]) -> None:
     for ev in events:
+        if ev.restrictions:
+            continue  # Newham notices already carry their own restriction text
         notes = []
         if ev.source == "London Stadium":
             notes.append(STANDING_RESTRICTION_NOTE)
-        if ev.event_time:
-            notes.append(f"Scheduled time: {ev.event_time}")
         if "west ham" in ev.category.lower():
             notes.append(
                 "Matchday: expect crowding around Stratford station, "
                 "Westfield and the Greenway 90 min before/after kick-off."
             )
         ev.restrictions = notes
+
+
+# ---------------------------------------------------------------------------
+# Archive (gives the calendar its rolling 6-month memory)
+# ---------------------------------------------------------------------------
+
+def load_archive() -> dict[str, dict]:
+    if not ARCHIVE_FILE.exists():
+        return {}
+    try:
+        return json.loads(ARCHIVE_FILE.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as exc:
+        print(f"[warn] could not read archive, starting fresh: {exc}", file=sys.stderr)
+        return {}
+
+
+def save_archive(archive: dict[str, dict]) -> None:
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    ARCHIVE_FILE.write_text(json.dumps(archive, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def merge_into_archive(archive: dict[str, dict], fresh_events: list[ParkEvent]) -> None:
+    now = datetime.now(timezone.utc).isoformat()
+    for ev in fresh_events:
+        rec = ev.to_record()
+        uid = rec["uid"]
+        rec["first_seen"] = archive.get(uid, {}).get("first_seen", now)
+        rec["last_seen"] = now
+        archive[uid] = rec
+
+
+def prune_archive(archive: dict[str, dict]) -> dict[str, dict]:
+    cutoff_past = date.today() - timedelta(days=HISTORY_DAYS)
+    cutoff_future = date.today() + timedelta(days=HORIZON_DAYS)
+    kept = {}
+    for uid, rec in archive.items():
+        try:
+            end_d = date.fromisoformat(rec["end"])
+            start_d = date.fromisoformat(rec["start"])
+        except (KeyError, ValueError):
+            continue
+        if end_d < cutoff_past or start_d > cutoff_future:
+            continue
+        kept[uid] = rec
+    return kept
 
 
 # ---------------------------------------------------------------------------
@@ -352,6 +584,44 @@ def escape_text(text: str) -> str:
     )
 
 
+def format_time_field(d: date, human_time: str) -> str:
+    date_str = d.strftime("%a %d %b %Y")
+    if human_time:
+        return f"{date_str}, {human_time}"
+    return f"{date_str} (all day / time not specified)"
+
+
+def build_description(ev: ParkEvent, severity: str, matched_terms: str) -> str:
+    restrictions_text = (
+        " | ".join(ev.restrictions) if ev.restrictions else "None specified"
+    )
+    other_info_bits = []
+    if ev.category:
+        other_info_bits.append(f"Category: {ev.category}")
+    other_info = "; ".join(other_info_bits) if other_info_bits else ""
+
+    lines = [
+        f"Event Name: {ev.title}",
+        f"Event Location: {ev.location or 'Not specified'}",
+        f"Event Start Time: {format_time_field(ev.start, ev.event_time)}",
+        (
+            f"Event End Time: {format_time_field(ev.end, '')}"
+            if ev.end != ev.start
+            else "Event End Time: Not specified (single-day event)"
+        ),
+        f"Busyness Factor: {severity.title()}",
+        f"Road Restrictions: {restrictions_text}",
+        "",
+        f"Other Information: {other_info}",
+        "",
+        "--",
+        f"Source of data: {ev.source}",
+        f"Website Link: {ev.url or 'Not available'}",
+        f"Matched terms: {matched_terms}",
+    ]
+    return escape_text("\n".join(lines))
+
+
 def build_ics(events: list[ParkEvent]) -> str:
     now = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     lines = [
@@ -362,7 +632,8 @@ def build_ics(events: list[ParkEvent]) -> str:
         "METHOD:PUBLISH",
         "X-WR-CALNAME:QEOP & London Stadium Traffic Watch",
         "X-WR-CALDESC:High footfall\\, road closure and parking-restriction "
-        "risk days around Queen Elizabeth Olympic Park and London Stadium.",
+        "risk days around Queen Elizabeth Olympic Park and London Stadium\\, "
+        "plus a rolling 6-month history.",
         "X-WR-TIMEZONE:Europe/London",
         "REFRESH-INTERVAL;VALUE=DURATION:P7D",
         "X-PUBLISHED-TTL:P7D",
@@ -372,25 +643,13 @@ def build_ics(events: list[ParkEvent]) -> str:
         dtstart = ev.start.strftime("%Y%m%d")
         dtend_exclusive = (ev.end + timedelta(days=1)).strftime("%Y%m%d")
 
-        severity, reason = classify_severity(
+        severity, matched_terms = classify_severity(
             ev.title, ev.category, " ".join(ev.restrictions)
         )
-        ev.severity, ev.severity_reason = severity, reason
 
-        summary = f"[{severity}] {ev.title} ({ev.source})"
-
-        desc_parts = [f"Source: {ev.source}"]
-        if ev.category:
-            desc_parts.append(f"Category: {ev.category}")
-        if ev.event_time:
-            desc_parts.append(f"Event time: {ev.event_time}")
-        desc_parts.append(f"Severity: {severity} - {reason}")
-        if ev.restrictions:
-            desc_parts.append("Restrictions / notes:")
-            desc_parts.extend(f"- {r}" for r in ev.restrictions)
-        if ev.url:
-            desc_parts.append(f"More info: {ev.url}")
-        description = escape_text("\n".join(desc_parts))
+        dot = SEVERITY_DOT[severity]
+        summary = f"{dot} {ev.title}, {ev.location or ev.source}"
+        description = build_description(ev, severity, matched_terms)
 
         lines.append("BEGIN:VEVENT")
         lines.append(fold_line(f"UID:{ev.uid()}"))
@@ -399,7 +658,7 @@ def build_ics(events: list[ParkEvent]) -> str:
         lines.append(f"DTEND;VALUE=DATE:{dtend_exclusive}")
         lines.append(fold_line(f"SUMMARY:{escape_text(summary)}"))
         lines.append(fold_line(f"DESCRIPTION:{description}"))
-        lines.append("LOCATION:Queen Elizabeth Olympic Park\\, London E20")
+        lines.append(f"LOCATION:{escape_text(ev.location or ev.source)}")
         lines.append(f"CATEGORIES:{severity}")
         lines.append("TRANSP:TRANSPARENT")
         lines.append("END:VEVENT")
@@ -413,45 +672,54 @@ def build_ics(events: list[ParkEvent]) -> str:
 # ---------------------------------------------------------------------------
 
 def main() -> None:
-    all_events: list[ParkEvent] = []
-    all_events.extend(scrape_london_stadium())
-    all_events.extend(scrape_qeop())
+    fresh_events: list[ParkEvent] = []
+    fresh_events.extend(scrape_london_stadium())
+    fresh_events.extend(scrape_qeop())
+    fresh_events.extend(scrape_newham_gazette_notices())
 
-    if not all_events:
+    if not fresh_events:
         print(
-            "[warn] no events scraped from either source this run - "
-            "leaving any existing docs/qeop-traffic.ics untouched so the "
-            "subscription doesn't go blank because of a temporary site "
-            "change or network hiccup.",
+            "[warn] no events scraped from any source this run - relying "
+            "entirely on the existing archive, if any.",
             file=sys.stderr,
         )
-        if OUTPUT_FILE.exists():
-            sys.exit(0)
-        else:
-            OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-            OUTPUT_FILE.write_text(build_ics([]), encoding="utf-8")
-            sys.exit(0)
 
+    # De-duplicate same-title/same-date events seen on more than one venue
+    # site, preferring the London Stadium entry (richer notes).
     dedup: dict[tuple[str, date], ParkEvent] = {}
-    for ev in all_events:
+    for ev in fresh_events:
         key = (ev.title.lower().strip(), ev.start)
         if key not in dedup or ev.source == "London Stadium":
             dedup[key] = ev
-    all_events = list(dedup.values())
+    fresh_events = list(dedup.values())
 
-    horizon = date.today() + timedelta(days=183)
-    all_events = [e for e in all_events if date.today() <= e.start <= horizon]
+    enrich_with_restrictions(fresh_events)
 
-    enrich_with_restrictions(all_events)
+    archive = load_archive()
+    merge_into_archive(archive, fresh_events)
+    archive = prune_archive(archive)
+    save_archive(archive)
+
+    all_events = [ParkEvent.from_record(rec) for rec in archive.values()]
+
+    if not all_events:
+        # True first-ever run with nothing scraped and nothing archived:
+        # still publish a valid (empty) calendar so the subscription URL
+        # works right away.
+        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+        OUTPUT_FILE.write_text(build_ics([]), encoding="utf-8")
+        print("Wrote 0 events (no data available yet)")
+        return
 
     ics_text = build_ics(all_events)
-
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_FILE.write_text(ics_text, encoding="utf-8")
 
-    print(f"Wrote {len(all_events)} events to {OUTPUT_FILE}")
+    print(f"Wrote {len(all_events)} events to {OUTPUT_FILE} "
+          f"({len(fresh_events)} freshly scraped this run)")
     for ev in sorted(all_events, key=lambda e: e.start):
-        print(f"  {ev.start} [{ev.severity:6s}] {ev.title} ({ev.source})")
+        severity, _ = classify_severity(ev.title, ev.category, " ".join(ev.restrictions))
+        print(f"  {ev.start} [{severity:6s}] {ev.title} ({ev.source})")
 
 
 if __name__ == "__main__":

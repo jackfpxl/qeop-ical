@@ -20,9 +20,9 @@ jobs:
   update-calendar:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -36,6 +36,6 @@ jobs:
         run: |
           git config user.name "qeop-traffic-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add docs/qeop-traffic.ics
+          git add docs/qeop-traffic.ics docs/history_archive.json
           git diff --cached --quiet && echo "No changes" || git commit -m "Auto-update QEOP traffic calendar"
           git push

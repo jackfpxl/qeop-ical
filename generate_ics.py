@@ -168,7 +168,7 @@ HIGH_KEYWORDS = [
 ]
 MEDIUM_KEYWORDS = [
     "community", "family", "run", "race", "tournament", "match", "fixture",
-    "sports", "sport", "circus live", "waiting and loading", "parking",
+    "sports", "sport", "waiting and loading", "parking",
     "temporary traffic", "diversion",
 ]
 
@@ -707,16 +707,25 @@ STANDING_RESTRICTION_NOTE = (
 
 def enrich_with_restrictions(events: list[ParkEvent]) -> None:
     for ev in events:
-        if ev.restrictions:
-            continue  # Newham notices already carry their own restriction text
-        notes = []
-        if ev.source == "London Stadium":
+        if ev.source == "Newham Council (The Gazette)":
+            continue  # these notices already carry their own full restriction text
+
+        notes = list(ev.restrictions)  # keep anything already attached (e.g. a resident letter link)
+        is_stadium_event = "stadium" in (ev.location or "").lower()
+
+        if is_stadium_event and STANDING_RESTRICTION_NOTE not in notes:
+            # Any event happening at the Stadium carries this same ATTRO /
+            # road-closure risk regardless of who's performing - this is
+            # what should drive severity, not keyword-guessing from the
+            # act or event's name.
             notes.append(STANDING_RESTRICTION_NOTE)
+
         if "west ham" in ev.category.lower():
             notes.append(
                 "Matchday: expect crowding around Stratford station, "
                 "Westfield and the Greenway 90 min before/after kick-off."
             )
+
         ev.restrictions = notes
 
 

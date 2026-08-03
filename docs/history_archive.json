@@ -1,0 +1,398 @@
+{
+  "1db4361a80303c266eb065623d6ebf942eab5880@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2027-01-16",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2027-01-16",
+    "title": "West Ham United v Swansea City",
+    "uid": "1db4361a80303c266eb065623d6ebf942eab5880@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "2496e00d786202858f5dbb67fbe6d90fc96314f7@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-09-13",
+    "event_time": "",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "Queen Elizabeth Olympic Park, London E20",
+    "restrictions": [],
+    "source": "Queen Elizabeth Olympic Park",
+    "start": "2026-09-12",
+    "title": "Black to the Future",
+    "uid": "2496e00d786202858f5dbb67fbe6d90fc96314f7@qeop-traffic-cal",
+    "url": "https://www.queenelizabetholympicpark.co.uk/themusicisblackfestival/black-to-the-future"
+  },
+  "3641b4b722039fafafc3cda55b161b0d194b164d@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-12-08",
+    "event_time": "19:45 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-12-08",
+    "title": "West Ham United v Middlesbrough",
+    "uid": "3641b4b722039fafafc3cda55b161b0d194b164d@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "39ad5c17ac97c3a92bb6274632637edb5bce4131@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-08-08",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-08-08",
+    "title": "Carabao Cup 1st rnd: West Ham United v Portsmouth",
+    "uid": "39ad5c17ac97c3a92bb6274632637edb5bce4131@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "4e362860bc1dfefb09ce9be13132c685e3da638b@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-11-28",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-11-28",
+    "title": "West Ham United v Stoke City",
+    "uid": "4e362860bc1dfefb09ce9be13132c685e3da638b@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "5d06159b0e2f35225d96fb646ae81ac1a53486df@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2027-02-16",
+    "event_time": "19:45 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2027-02-16",
+    "title": "West Ham United v Lincoln City",
+    "uid": "5d06159b0e2f35225d96fb646ae81ac1a53486df@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "6c09cb2b573b22b367ac6751f1a0ab24eebd1163@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-11-21",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-11-21",
+    "title": "West Ham United v Preston North End",
+    "uid": "6c09cb2b573b22b367ac6751f1a0ab24eebd1163@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "778fd8442167a596b57d84a7672227ef3ce40475@qeop-traffic-cal": {
+    "category": "Residents notice",
+    "end": "2026-07-05",
+    "event_time": "",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "Queen Elizabeth Olympic Park, London E20",
+    "restrictions": [
+      "Resident letter (PDF, opens on the Park's site): https://live-qeop.pantheonsite.io/sites/default/files/attachments/Resident%20Letter%20regarding%20Summer%202026%20Events_%20%281%29.pdf"
+    ],
+    "source": "Queen Elizabeth Olympic Park (Residents Notices)",
+    "start": "2026-07-03",
+    "title": "Metallica - M72 World Tour",
+    "uid": "778fd8442167a596b57d84a7672227ef3ce40475@qeop-traffic-cal",
+    "url": "https://live-qeop.pantheonsite.io/sites/default/files/attachments/Resident%20Letter%20regarding%20Summer%202026%20Events_%20%281%29.pdf"
+  },
+  "7c32217b28f9d2009cbb0fb28194e17050cf395e@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2027-03-06",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2027-03-06",
+    "title": "West Ham United v Burnley",
+    "uid": "7c32217b28f9d2009cbb0fb28194e17050cf395e@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "7ca7cc5d024892a873457d3349eaa3a3ba619c6c@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-08-23",
+    "event_time": "",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "Queen Elizabeth Olympic Park, London E20",
+    "restrictions": [],
+    "source": "Queen Elizabeth Olympic Park",
+    "start": "2026-08-22",
+    "title": "Queer Frequencies",
+    "uid": "7ca7cc5d024892a873457d3349eaa3a3ba619c6c@qeop-traffic-cal",
+    "url": "https://www.queenelizabetholympicpark.co.uk/themusicisblackfestival/queer-frequencies"
+  },
+  "8e04c719e290a9041ae21580d75936a02798af57@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-09-05",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-09-05",
+    "title": "West Ham United v Derby County",
+    "uid": "8e04c719e290a9041ae21580d75936a02798af57@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "9bf186715c41401ae1d4bad48e108c7de9621364@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2027-03-17",
+    "event_time": "19:45 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2027-03-17",
+    "title": "West Ham United v Sheffield United",
+    "uid": "9bf186715c41401ae1d4bad48e108c7de9621364@qeop-traffic-cal",
+    "url": "https://www.london-stadium.com/event/2027/march/west-ham-united-v-sheffield-united.html"
+  },
+  "9c2cfd61f9602a87a718fd763a10cdc4455096f1@qeop-traffic-cal": {
+    "category": "Residents notice",
+    "end": "2026-07-26",
+    "event_time": "",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "Queen Elizabeth Olympic Park, London E20",
+    "restrictions": [
+      "Resident letter (PDF, opens on the Park's site): https://live-qeop.pantheonsite.io/sites/default/files/attachments/Resident%20Letter%20regarding%20Summer%202026%20Events_%20%281%29.pdf"
+    ],
+    "source": "Queen Elizabeth Olympic Park (Residents Notices)",
+    "start": "2026-07-24",
+    "title": "Wing Fest London 2026",
+    "uid": "9c2cfd61f9602a87a718fd763a10cdc4455096f1@qeop-traffic-cal",
+    "url": "https://live-qeop.pantheonsite.io/sites/default/files/attachments/Resident%20Letter%20regarding%20Summer%202026%20Events_%20%281%29.pdf"
+  },
+  "a80dd985c43e9e9848f1122d4299a7b82b27c0bb@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2027-02-20",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2027-02-20",
+    "title": "West Ham United v Millwall",
+    "uid": "a80dd985c43e9e9848f1122d4299a7b82b27c0bb@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "b63752e2ac1ddea5b4e08b7c3e85d58c45aebc3c@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2027-01-30",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2027-01-30",
+    "title": "West Ham United v Blackburn Rovers",
+    "uid": "b63752e2ac1ddea5b4e08b7c3e85d58c45aebc3c@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "b7bf25564b6df2a42ad1b341bc9b334678cb18db@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-09-11",
+    "event_time": "20:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-09-11",
+    "title": "West Ham United v Wrexham",
+    "uid": "b7bf25564b6df2a42ad1b341bc9b334678cb18db@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "b900d086654b4b5a7ecbfa4e60738ff95976c506@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-08-22",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-08-22",
+    "title": "West Ham United v Charlton Athletic",
+    "uid": "b900d086654b4b5a7ecbfa4e60738ff95976c506@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "bce9d3b3461a4bab131189cee3a9eac7b209ca7b@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2027-01-27",
+    "event_time": "19:45 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2027-01-27",
+    "title": "West Ham United v Cardiff City",
+    "uid": "bce9d3b3461a4bab131189cee3a9eac7b209ca7b@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "c299bae96fa149c48bbed8f7a5a9e5e44343064a@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-10-10",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-10-10",
+    "title": "West Ham United v Queens Park Rangers",
+    "uid": "c299bae96fa149c48bbed8f7a5a9e5e44343064a@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "cd97984e57544a730d77f58e7d061bcb51a12e34@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-10-31",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-10-31",
+    "title": "West Ham United v West Bromwich Albion",
+    "uid": "cd97984e57544a730d77f58e7d061bcb51a12e34@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "ce5ed0d8fff56e379a751de357dc605c23e0a8cd@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-10-24",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-10-24",
+    "title": "West Ham United v Southampton",
+    "uid": "ce5ed0d8fff56e379a751de357dc605c23e0a8cd@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "d01023f9fdeb811b8568fec83cd3aed2de468882@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-12-26",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-12-26",
+    "title": "West Ham United v Norwich City",
+    "uid": "d01023f9fdeb811b8568fec83cd3aed2de468882@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "d4b449a1925d2041a3dfe52fae1c4fdca26b41e9@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-12-12",
+    "event_time": "15:00 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-12-12",
+    "title": "West Ham United v Bristol City",
+    "uid": "d4b449a1925d2041a3dfe52fae1c4fdca26b41e9@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "edb65efc501b4d335e32670d13e998d02508219e@qeop-traffic-cal": {
+    "category": "Event",
+    "end": "2026-09-01",
+    "event_time": "19:45 PM",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
+    "restrictions": [
+      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
+    ],
+    "source": "London Stadium",
+    "start": "2026-09-01",
+    "title": "West Ham United v Wolverhampton Wanderers",
+    "uid": "edb65efc501b4d335e32670d13e998d02508219e@qeop-traffic-cal",
+    "url": "https://whufc.freshdesk.com/support/home"
+  },
+  "f3cb7dc32dea42d690ad147322abf547dab6cdd8@qeop-traffic-cal": {
+    "category": "Residents notice",
+    "end": "2026-06-27",
+    "event_time": "",
+    "first_seen": "2026-08-03T17:01:52.889713+00:00",
+    "last_seen": "2026-08-03T17:01:52.889713+00:00",
+    "location": "Queen Elizabeth Olympic Park, London E20",
+    "restrictions": [
+      "Resident letter (PDF, opens on the Park's site): https://live-qeop.pantheonsite.io/sites/default/files/attachments/Resident%20Letter%20regarding%20Summer%202026%20Events_%20%281%29.pdf"
+    ],
+    "source": "Queen Elizabeth Olympic Park (Residents Notices)",
+    "start": "2026-06-25",
+    "title": "Take That - The Circus Live",
+    "uid": "f3cb7dc32dea42d690ad147322abf547dab6cdd8@qeop-traffic-cal",
+    "url": "https://live-qeop.pantheonsite.io/sites/default/files/attachments/Resident%20Letter%20regarding%20Summer%202026%20Events_%20%281%29.pdf"
+  }
+}

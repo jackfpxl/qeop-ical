@@ -52,8 +52,10 @@ OUTPUT_DIR = Path(__file__).parent / "docs"
 OUTPUT_FILE = OUTPUT_DIR / "qeop-traffic.ics"
 ARCHIVE_FILE = OUTPUT_DIR / "history_archive.json"
 
-HISTORY_DAYS = 183  # ~6 months back
-HORIZON_DAYS = 183  # ~6 months forward
+HISTORY_DAYS = 183  # ~6 months back - matches what was asked for
+HORIZON_DAYS = 365  # ~12 months forward - no reason to cap this as tightly as
+                     # the history side; venues do sometimes list events this
+                     # far out and there's nothing to gain by hiding them
 
 HEADERS = {
     "User-Agent": (

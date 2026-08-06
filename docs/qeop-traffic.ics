@@ -8,4 +8,588 @@ X-WR-CALDESC:High footfall\, road closure and parking-restriction risk days arou
 X-WR-TIMEZONE:Europe/London
 REFRESH-INTERVAL;VALUE=DURATION:P7D
 X-PUBLISHED-TTL:P7D
+BEGIN:VEVENT
+UID:f3cb7dc32dea42d690ad147322abf547dab6cdd8@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20260625
+DTEND;VALUE=DATE:20260628
+SUMMARY:🟢 Take That - The Circus Live\, Queen Elizabeth Olympic Park\, Lon
+ don E20
+DESCRIPTION:Event Name: Take That - The Circus Live\n\nEvent Location: Que
+ en Elizabeth Olympic Park\, London E20\n\nEvent Start Time: Thu 25 Jun 20
+ 26 (all day / time not specified)\n\nEvent End Time: Sat 27 Jun 2026 (all
+  day / time not specified)\n\nBusyness Factor: Low\n\nRoad Restrictions: 
+ Resident letter (PDF\, opens on the Park's site): https://live-qeop.panth
+ eonsite.io/sites/default/files/attachments/Resident%20Letter%20regarding%
+ 20Summer%202026%20Events_%20%281%29.pdf\n\nOther Information: Category: R
+ esidents notice\n\n--\n\n\nSource of data: Queen Elizabeth Olympic Park (
+ Residents Notices)\n\nWebsite Link: https://live-qeop.pantheonsite.io/sit
+ es/default/files/attachments/Resident%20Letter%20regarding%20Summer%20202
+ 6%20Events_%20%281%29.pdf\n\nMatched terms: none matched (default)
+LOCATION:Queen Elizabeth Olympic Park\, London E20
+CATEGORIES:LOW
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:778fd8442167a596b57d84a7672227ef3ce40475@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20260703
+DTEND;VALUE=DATE:20260706
+SUMMARY:🔴 Metallica - M72 World Tour\, Queen Elizabeth Olympic Park\, Lond
+ on E20
+DESCRIPTION:Event Name: Metallica - M72 World Tour\n\nEvent Location: Quee
+ n Elizabeth Olympic Park\, London E20\n\nEvent Start Time: Fri 03 Jul 202
+ 6 (all day / time not specified)\n\nEvent End Time: Sun 05 Jul 2026 (all 
+ day / time not specified)\n\nBusyness Factor: High\n\nRoad Restrictions: 
+ Resident letter (PDF\, opens on the Park's site): https://live-qeop.panth
+ eonsite.io/sites/default/files/attachments/Resident%20Letter%20regarding%
+ 20Summer%202026%20Events_%20%281%29.pdf\n\nOther Information: Category: R
+ esidents notice\n\n--\n\n\nSource of data: Queen Elizabeth Olympic Park (
+ Residents Notices)\n\nWebsite Link: https://live-qeop.pantheonsite.io/sit
+ es/default/files/attachments/Resident%20Letter%20regarding%20Summer%20202
+ 6%20Events_%20%281%29.pdf\n\nMatched terms: m72\, world tour
+LOCATION:Queen Elizabeth Olympic Park\, London E20
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:9c2cfd61f9602a87a718fd763a10cdc4455096f1@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20260724
+DTEND;VALUE=DATE:20260727
+SUMMARY:🔴 Wing Fest London 2026\, Queen Elizabeth Olympic Park\, London E2
+ 0
+DESCRIPTION:Event Name: Wing Fest London 2026\n\nEvent Location: Queen Eli
+ zabeth Olympic Park\, London E20\n\nEvent Start Time: Fri 24 Jul 2026 (al
+ l day / time not specified)\n\nEvent End Time: Sun 26 Jul 2026 (all day /
+  time not specified)\n\nBusyness Factor: High\n\nRoad Restrictions: Resid
+ ent letter (PDF\, opens on the Park's site): https://live-qeop.pantheonsi
+ te.io/sites/default/files/attachments/Resident%20Letter%20regarding%20Sum
+ mer%202026%20Events_%20%281%29.pdf\n\nOther Information: Category: Reside
+ nts notice\n\n--\n\n\nSource of data: Queen Elizabeth Olympic Park (Resid
+ ents Notices)\n\nWebsite Link: https://live-qeop.pantheonsite.io/sites/de
+ fault/files/attachments/Resident%20Letter%20regarding%20Summer%202026%20E
+ vents_%20%281%29.pdf\n\nMatched terms: wing fest
+LOCATION:Queen Elizabeth Olympic Park\, London E20
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:39ad5c17ac97c3a92bb6274632637edb5bce4131@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20260808
+DTEND;VALUE=DATE:20260809
+SUMMARY:🔴 Carabao Cup 1st rnd: West Ham United v Portsmouth\, London Stadi
+ um\, Queen Elizabeth Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: Carabao Cup 1st rnd: West Ham United v Portsmouth\
+ n\nEvent Location: London Stadium\, Queen Elizabeth Olympic Park\, London
+  E20 2ST\n\nEvent Start Time: Sat 08 Aug 2026\, 15:00 PM\n\nEvent End Tim
+ e: Not specified (single-day event)\n\nBusyness Factor: High\n\nRoad Rest
+ rictions: Standing notice from London Stadium residents' info: on-site no
+ ise is restricted to 08:00-22:00 during build/de-rig for major events\; s
+ ound checks run from two days before a concert (09:00-22:00)\; venue curf
+ ew is 23:00\; road closures for major events are managed under an Anti-Te
+ rrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer t
+ he date at https://www.london-stadium.com/residents-information/index.htm
+ l\n\nOther Information: Category: Event\n\n--\n\n\nSource of data: London
+  Stadium\n\nWebsite Link: https://whufc.freshdesk.com/support/home\n\nMat
+ ched terms: attro\, concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:7ca7cc5d024892a873457d3349eaa3a3ba619c6c@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20260822
+DTEND;VALUE=DATE:20260824
+SUMMARY:🟢 Queer Frequencies\, Queen Elizabeth Olympic Park\, London E20
+DESCRIPTION:Event Name: Queer Frequencies\n\nEvent Location: Queen Elizabe
+ th Olympic Park\, London E20\n\nEvent Start Time: Sat 22 Aug 2026 (all da
+ y / time not specified)\n\nEvent End Time: Sun 23 Aug 2026 (all day / tim
+ e not specified)\n\nBusyness Factor: Low\n\nRoad Restrictions: None speci
+ fied\n\nOther Information: Category: Event\n\n--\n\n\nSource of data: Que
+ en Elizabeth Olympic Park\n\nWebsite Link: https://www.queenelizabetholym
+ picpark.co.uk/themusicisblackfestival/queer-frequencies\n\nMatched terms:
+  none matched (default)
+LOCATION:Queen Elizabeth Olympic Park\, London E20
+CATEGORIES:LOW
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:b900d086654b4b5a7ecbfa4e60738ff95976c506@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20260822
+DTEND;VALUE=DATE:20260823
+SUMMARY:🔴 West Ham United v Charlton Athletic\, London Stadium\, Queen Eli
+ zabeth Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Charlton Athletic\n\nEvent Locat
+ ion: London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEv
+ ent Start Time: Sat 22 Aug 2026\, 15:00 PM\n\nEvent End Time: Not specifi
+ ed (single-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Stan
+ ding notice from London Stadium residents' info: on-site noise is restric
+ ted to 08:00-22:00 during build/de-rig for major events\; sound checks ru
+ n from two days before a concert (09:00-22:00)\; venue curfew is 23:00\; 
+ road closures for major events are managed under an Anti-Terrorism Traffi
+ c Regulation Order (ATTRO). Confirm exact closures nearer the date at htt
+ ps://www.london-stadium.com/residents-information/index.html\n\nOther Inf
+ ormation: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWe
+ bsite Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: at
+ tro\, concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:edb65efc501b4d335e32670d13e998d02508219e@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20260901
+DTEND;VALUE=DATE:20260902
+SUMMARY:🔴 West Ham United v Wolverhampton Wanderers\, London Stadium\, Que
+ en Elizabeth Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Wolverhampton Wanderers\n\nEvent
+  Location: London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+ \n\nEvent Start Time: Tue 01 Sep 2026\, 19:45 PM\n\nEvent End Time: Not s
+ pecified (single-day event)\n\nBusyness Factor: High\n\nRoad Restrictions
+ : Standing notice from London Stadium residents' info: on-site noise is r
+ estricted to 08:00-22:00 during build/de-rig for major events\; sound che
+ cks run from two days before a concert (09:00-22:00)\; venue curfew is 23
+ :00\; road closures for major events are managed under an Anti-Terrorism 
+ Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date 
+ at https://www.london-stadium.com/residents-information/index.html\n\nOth
+ er Information: Category: Event\n\n--\n\n\nSource of data: London Stadium
+ \n\nWebsite Link: https://whufc.freshdesk.com/support/home\n\nMatched ter
+ ms: attro\, concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:8e04c719e290a9041ae21580d75936a02798af57@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20260905
+DTEND;VALUE=DATE:20260906
+SUMMARY:🔴 West Ham United v Derby County\, London Stadium\, Queen Elizabet
+ h Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Derby County\n\nEvent Location: 
+ London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent S
+ tart Time: Sat 05 Sep 2026\, 15:00 PM\n\nEvent End Time: Not specified (s
+ ingle-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing 
+ notice from London Stadium residents' info: on-site noise is restricted t
+ o 08:00-22:00 during build/de-rig for major events\; sound checks run fro
+ m two days before a concert (09:00-22:00)\; venue curfew is 23:00\; road 
+ closures for major events are managed under an Anti-Terrorism Traffic Reg
+ ulation Order (ATTRO). Confirm exact closures nearer the date at https://
+ www.london-stadium.com/residents-information/index.html\n\nOther Informat
+ ion: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite
+  Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\,
+  concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:b7bf25564b6df2a42ad1b341bc9b334678cb18db@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260912
+SUMMARY:🔴 West Ham United v Wrexham\, London Stadium\, Queen Elizabeth Oly
+ mpic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Wrexham\n\nEvent Location: Londo
+ n Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent Start 
+ Time: Fri 11 Sep 2026\, 20:00 PM\n\nEvent End Time: Not specified (single
+ -day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing notic
+ e from London Stadium residents' info: on-site noise is restricted to 08:
+ 00-22:00 during build/de-rig for major events\; sound checks run from two
+  days before a concert (09:00-22:00)\; venue curfew is 23:00\; road closu
+ res for major events are managed under an Anti-Terrorism Traffic Regulati
+ on Order (ATTRO). Confirm exact closures nearer the date at https://www.l
+ ondon-stadium.com/residents-information/index.html\n\nOther Information: 
+ Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite Link
+ : https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\, conc
+ ert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2496e00d786202858f5dbb67fbe6d90fc96314f7@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260914
+SUMMARY:🟢 Black to the Future\, Queen Elizabeth Olympic Park\, London E20
+ 
+DESCRIPTION:Event Name: Black to the Future\n\nEvent Location: Queen Eliza
+ beth Olympic Park\, London E20\n\nEvent Start Time: Sat 12 Sep 2026 (all 
+ day / time not specified)\n\nEvent End Time: Sun 13 Sep 2026 (all day / t
+ ime not specified)\n\nBusyness Factor: Low\n\nRoad Restrictions: None spe
+ cified\n\nOther Information: Category: Event\n\n--\n\n\nSource of data: Q
+ ueen Elizabeth Olympic Park\n\nWebsite Link: https://www.queenelizabethol
+ ympicpark.co.uk/themusicisblackfestival/black-to-the-future\n\nMatched te
+ rms: none matched (default)
+LOCATION:Queen Elizabeth Olympic Park\, London E20
+CATEGORIES:LOW
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:c299bae96fa149c48bbed8f7a5a9e5e44343064a@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261011
+SUMMARY:🔴 West Ham United v Queens Park Rangers\, London Stadium\, Queen E
+ lizabeth Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Queens Park Rangers\n\nEvent Loc
+ ation: London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\n
+ Event Start Time: Sat 10 Oct 2026\, 15:00 PM\n\nEvent End Time: Not speci
+ fied (single-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: St
+ anding notice from London Stadium residents' info: on-site noise is restr
+ icted to 08:00-22:00 during build/de-rig for major events\; sound checks 
+ run from two days before a concert (09:00-22:00)\; venue curfew is 23:00\
+ ; road closures for major events are managed under an Anti-Terrorism Traf
+ fic Regulation Order (ATTRO). Confirm exact closures nearer the date at h
+ ttps://www.london-stadium.com/residents-information/index.html\n\nOther I
+ nformation: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\n
+ Website Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: 
+ attro\, concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ce5ed0d8fff56e379a751de357dc605c23e0a8cd@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:🔴 West Ham United v Southampton\, London Stadium\, Queen Elizabeth
+  Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Southampton\n\nEvent Location: L
+ ondon Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent St
+ art Time: Sat 24 Oct 2026\, 15:00 PM\n\nEvent End Time: Not specified (si
+ ngle-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing n
+ otice from London Stadium residents' info: on-site noise is restricted to
+  08:00-22:00 during build/de-rig for major events\; sound checks run from
+  two days before a concert (09:00-22:00)\; venue curfew is 23:00\; road c
+ losures for major events are managed under an Anti-Terrorism Traffic Regu
+ lation Order (ATTRO). Confirm exact closures nearer the date at https://w
+ ww.london-stadium.com/residents-information/index.html\n\nOther Informati
+ on: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite 
+ Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\, 
+ concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cd97984e57544a730d77f58e7d061bcb51a12e34@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🔴 West Ham United v West Bromwich Albion\, London Stadium\, Queen 
+ Elizabeth Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v West Bromwich Albion\n\nEvent Lo
+ cation: London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\
+ nEvent Start Time: Sat 31 Oct 2026\, 15:00 PM\n\nEvent End Time: Not spec
+ ified (single-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: S
+ tanding notice from London Stadium residents' info: on-site noise is rest
+ ricted to 08:00-22:00 during build/de-rig for major events\; sound checks
+  run from two days before a concert (09:00-22:00)\; venue curfew is 23:00
+ \; road closures for major events are managed under an Anti-Terrorism Tra
+ ffic Regulation Order (ATTRO). Confirm exact closures nearer the date at 
+ https://www.london-stadium.com/residents-information/index.html\n\nOther 
+ Information: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\
+ nWebsite Link: https://whufc.freshdesk.com/support/home\n\nMatched terms:
+  attro\, concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:6c09cb2b573b22b367ac6751f1a0ab24eebd1163@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🔴 West Ham United v Preston North End\, London Stadium\, Queen Eli
+ zabeth Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Preston North End\n\nEvent Locat
+ ion: London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEv
+ ent Start Time: Sat 21 Nov 2026\, 15:00 PM\n\nEvent End Time: Not specifi
+ ed (single-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Stan
+ ding notice from London Stadium residents' info: on-site noise is restric
+ ted to 08:00-22:00 during build/de-rig for major events\; sound checks ru
+ n from two days before a concert (09:00-22:00)\; venue curfew is 23:00\; 
+ road closures for major events are managed under an Anti-Terrorism Traffi
+ c Regulation Order (ATTRO). Confirm exact closures nearer the date at htt
+ ps://www.london-stadium.com/residents-information/index.html\n\nOther Inf
+ ormation: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWe
+ bsite Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: at
+ tro\, concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:4e362860bc1dfefb09ce9be13132c685e3da638b@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🔴 West Ham United v Stoke City\, London Stadium\, Queen Elizabeth 
+ Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Stoke City\n\nEvent Location: Lo
+ ndon Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent Sta
+ rt Time: Sat 28 Nov 2026\, 15:00 PM\n\nEvent End Time: Not specified (sin
+ gle-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing no
+ tice from London Stadium residents' info: on-site noise is restricted to 
+ 08:00-22:00 during build/de-rig for major events\; sound checks run from 
+ two days before a concert (09:00-22:00)\; venue curfew is 23:00\; road cl
+ osures for major events are managed under an Anti-Terrorism Traffic Regul
+ ation Order (ATTRO). Confirm exact closures nearer the date at https://ww
+ w.london-stadium.com/residents-information/index.html\n\nOther Informatio
+ n: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite L
+ ink: https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\, c
+ oncert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:3641b4b722039fafafc3cda55b161b0d194b164d@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261209
+SUMMARY:🔴 West Ham United v Middlesbrough\, London Stadium\, Queen Elizabe
+ th Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Middlesbrough\n\nEvent Location:
+  London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent 
+ Start Time: Tue 08 Dec 2026\, 19:45 PM\n\nEvent End Time: Not specified (
+ single-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing
+  notice from London Stadium residents' info: on-site noise is restricted 
+ to 08:00-22:00 during build/de-rig for major events\; sound checks run fr
+ om two days before a concert (09:00-22:00)\; venue curfew is 23:00\; road
+  closures for major events are managed under an Anti-Terrorism Traffic Re
+ gulation Order (ATTRO). Confirm exact closures nearer the date at https:/
+ /www.london-stadium.com/residents-information/index.html\n\nOther Informa
+ tion: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsit
+ e Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\
+ , concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:d4b449a1925d2041a3dfe52fae1c4fdca26b41e9@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:🔴 West Ham United v Bristol City\, London Stadium\, Queen Elizabet
+ h Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Bristol City\n\nEvent Location: 
+ London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent S
+ tart Time: Sat 12 Dec 2026\, 15:00 PM\n\nEvent End Time: Not specified (s
+ ingle-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing 
+ notice from London Stadium residents' info: on-site noise is restricted t
+ o 08:00-22:00 during build/de-rig for major events\; sound checks run fro
+ m two days before a concert (09:00-22:00)\; venue curfew is 23:00\; road 
+ closures for major events are managed under an Anti-Terrorism Traffic Reg
+ ulation Order (ATTRO). Confirm exact closures nearer the date at https://
+ www.london-stadium.com/residents-information/index.html\n\nOther Informat
+ ion: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite
+  Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\,
+  concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:d01023f9fdeb811b8568fec83cd3aed2de468882@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20261226
+DTEND;VALUE=DATE:20261227
+SUMMARY:🔴 West Ham United v Norwich City\, London Stadium\, Queen Elizabet
+ h Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Norwich City\n\nEvent Location: 
+ London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent S
+ tart Time: Sat 26 Dec 2026\, 15:00 PM\n\nEvent End Time: Not specified (s
+ ingle-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing 
+ notice from London Stadium residents' info: on-site noise is restricted t
+ o 08:00-22:00 during build/de-rig for major events\; sound checks run fro
+ m two days before a concert (09:00-22:00)\; venue curfew is 23:00\; road 
+ closures for major events are managed under an Anti-Terrorism Traffic Reg
+ ulation Order (ATTRO). Confirm exact closures nearer the date at https://
+ www.london-stadium.com/residents-information/index.html\n\nOther Informat
+ ion: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite
+  Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\,
+  concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:1db4361a80303c266eb065623d6ebf942eab5880@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270117
+SUMMARY:🔴 West Ham United v Swansea City\, London Stadium\, Queen Elizabet
+ h Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Swansea City\n\nEvent Location: 
+ London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent S
+ tart Time: Sat 16 Jan 2027\, 15:00 PM\n\nEvent End Time: Not specified (s
+ ingle-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing 
+ notice from London Stadium residents' info: on-site noise is restricted t
+ o 08:00-22:00 during build/de-rig for major events\; sound checks run fro
+ m two days before a concert (09:00-22:00)\; venue curfew is 23:00\; road 
+ closures for major events are managed under an Anti-Terrorism Traffic Reg
+ ulation Order (ATTRO). Confirm exact closures nearer the date at https://
+ www.london-stadium.com/residents-information/index.html\n\nOther Informat
+ ion: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite
+  Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\,
+  concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:bce9d3b3461a4bab131189cee3a9eac7b209ca7b@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20270127
+DTEND;VALUE=DATE:20270128
+SUMMARY:🔴 West Ham United v Cardiff City\, London Stadium\, Queen Elizabet
+ h Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Cardiff City\n\nEvent Location: 
+ London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent S
+ tart Time: Wed 27 Jan 2027\, 19:45 PM\n\nEvent End Time: Not specified (s
+ ingle-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing 
+ notice from London Stadium residents' info: on-site noise is restricted t
+ o 08:00-22:00 during build/de-rig for major events\; sound checks run fro
+ m two days before a concert (09:00-22:00)\; venue curfew is 23:00\; road 
+ closures for major events are managed under an Anti-Terrorism Traffic Reg
+ ulation Order (ATTRO). Confirm exact closures nearer the date at https://
+ www.london-stadium.com/residents-information/index.html\n\nOther Informat
+ ion: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite
+  Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\,
+  concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:b63752e2ac1ddea5b4e08b7c3e85d58c45aebc3c@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270131
+SUMMARY:🔴 West Ham United v Blackburn Rovers\, London Stadium\, Queen Eliz
+ abeth Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Blackburn Rovers\n\nEvent Locati
+ on: London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEve
+ nt Start Time: Sat 30 Jan 2027\, 15:00 PM\n\nEvent End Time: Not specifie
+ d (single-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Stand
+ ing notice from London Stadium residents' info: on-site noise is restrict
+ ed to 08:00-22:00 during build/de-rig for major events\; sound checks run
+  from two days before a concert (09:00-22:00)\; venue curfew is 23:00\; r
+ oad closures for major events are managed under an Anti-Terrorism Traffic
+  Regulation Order (ATTRO). Confirm exact closures nearer the date at http
+ s://www.london-stadium.com/residents-information/index.html\n\nOther Info
+ rmation: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWeb
+ site Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: att
+ ro\, concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:5d06159b0e2f35225d96fb646ae81ac1a53486df@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20270216
+DTEND;VALUE=DATE:20270217
+SUMMARY:🔴 West Ham United v Lincoln City\, London Stadium\, Queen Elizabet
+ h Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Lincoln City\n\nEvent Location: 
+ London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent S
+ tart Time: Tue 16 Feb 2027\, 19:45 PM\n\nEvent End Time: Not specified (s
+ ingle-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing 
+ notice from London Stadium residents' info: on-site noise is restricted t
+ o 08:00-22:00 during build/de-rig for major events\; sound checks run fro
+ m two days before a concert (09:00-22:00)\; venue curfew is 23:00\; road 
+ closures for major events are managed under an Anti-Terrorism Traffic Reg
+ ulation Order (ATTRO). Confirm exact closures nearer the date at https://
+ www.london-stadium.com/residents-information/index.html\n\nOther Informat
+ ion: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite
+  Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\,
+  concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:a80dd985c43e9e9848f1122d4299a7b82b27c0bb@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:🔴 West Ham United v Millwall\, London Stadium\, Queen Elizabeth Ol
+ ympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Millwall\n\nEvent Location: Lond
+ on Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent Start
+  Time: Sat 20 Feb 2027\, 15:00 PM\n\nEvent End Time: Not specified (singl
+ e-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing noti
+ ce from London Stadium residents' info: on-site noise is restricted to 08
+ :00-22:00 during build/de-rig for major events\; sound checks run from tw
+ o days before a concert (09:00-22:00)\; venue curfew is 23:00\; road clos
+ ures for major events are managed under an Anti-Terrorism Traffic Regulat
+ ion Order (ATTRO). Confirm exact closures nearer the date at https://www.
+ london-stadium.com/residents-information/index.html\n\nOther Information:
+  Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite Lin
+ k: https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\, con
+ cert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:7c32217b28f9d2009cbb0fb28194e17050cf395e@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20270306
+DTEND;VALUE=DATE:20270307
+SUMMARY:🔴 West Ham United v Burnley\, London Stadium\, Queen Elizabeth Oly
+ mpic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Burnley\n\nEvent Location: Londo
+ n Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent Start 
+ Time: Sat 06 Mar 2027\, 15:00 PM\n\nEvent End Time: Not specified (single
+ -day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing notic
+ e from London Stadium residents' info: on-site noise is restricted to 08:
+ 00-22:00 during build/de-rig for major events\; sound checks run from two
+  days before a concert (09:00-22:00)\; venue curfew is 23:00\; road closu
+ res for major events are managed under an Anti-Terrorism Traffic Regulati
+ on Order (ATTRO). Confirm exact closures nearer the date at https://www.l
+ ondon-stadium.com/residents-information/index.html\n\nOther Information: 
+ Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite Link
+ : https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\, conc
+ ert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:9bf186715c41401ae1d4bad48e108c7de9621364@qeop-traffic-cal
+DTSTAMP:20260803T170244Z
+DTSTART;VALUE=DATE:20270317
+DTEND;VALUE=DATE:20270318
+SUMMARY:🔴 West Ham United v Sheffield United\, London Stadium\, Queen Eliz
+ abeth Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Sheffield United\n\nEvent Locati
+ on: London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEve
+ nt Start Time: Wed 17 Mar 2027\, 19:45 PM\n\nEvent End Time: Not specifie
+ d (single-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Stand
+ ing notice from London Stadium residents' info: on-site noise is restrict
+ ed to 08:00-22:00 during build/de-rig for major events\; sound checks run
+  from two days before a concert (09:00-22:00)\; venue curfew is 23:00\; r
+ oad closures for major events are managed under an Anti-Terrorism Traffic
+  Regulation Order (ATTRO). Confirm exact closures nearer the date at http
+ s://www.london-stadium.com/residents-information/index.html\n\nOther Info
+ rmation: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWeb
+ site Link: https://www.london-stadium.com/event/2027/march/west-ham-unite
+ d-v-sheffield-united.html\n\nMatched terms: attro\, concert\, road closur
+ e\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
 END:VCALENDAR

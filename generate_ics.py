@@ -196,106 +196,152 @@ LONDON_STADIUM_SOURCES = [
     ("https://www.london-stadium.com/events/west-ham.html", "Sport - West Ham United"),
 ]
 LONDON_STADIUM_LOCATION = "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST"
+LONDON_STADIUM_MAX_PAGES_PER_SOURCE = 10  # safety cap, not a real expected limit
+
+
+def _parse_stadium_page(lines: list[str], soup: BeautifulSoup, forced_category: str) -> list[ParkEvent]:
+    """Parses a single page's worth of event cards. See scrape_london_stadium
+    for why titles and links are matched up the way they are."""
+    page_events: list[ParkEvent] = []
+
+    # NOTE: on this site the event title is plain text, not a link - only
+    # "Book now" and "More info" are actual anchors. So instead of
+    # looking up a href by matching the title's text (which never
+    # exists as anchor text here), we walk the "More info" anchors
+    # directly and pull the title out of the same card/container.
+    more_info_links = [
+        a for a in soup.find_all("a", href=True)
+        if a.get_text(strip=True).lower() == "more info"
+    ]
+    info_link_iter = iter(more_info_links)
+
+    i = 0
+    while i < len(lines):
+        m = FULL_DATE_RE.search(lines[i])
+        if not m:
+            i += 1
+            continue
+
+        day, month_name, year = m.groups()
+        month = datetime.strptime(month_name[:3], "%b").month
+        event_date = date(int(year), month, int(day))
+
+        event_time = ""
+        title = ""
+        j = i + 1
+        window_end = min(i + 6, len(lines))
+        hit_more_info = False
+        while j < window_end:
+            line = lines[j]
+            low = line.lower()
+            if low == "more info":
+                hit_more_info = True
+                j += 1
+                break
+            if low in SKIP_LINE_VALUES:
+                j += 1
+                continue
+            t_match = TIME_RE.search(line)
+            if t_match and not title:
+                event_time = t_match.group(1)
+                j += 1
+                continue
+            if FULL_DATE_RE.search(line):
+                break
+            if not title and len(line) > 3:
+                title = line
+                j += 1
+                continue
+            break
+
+        i = j
+        if not title:
+            continue
+
+        href = ""
+        if hit_more_info:
+            next_link = next(info_link_iter, None)
+            if next_link is not None:
+                raw_href = next_link["href"]
+                if raw_href.startswith("http"):
+                    href = raw_href
+                elif raw_href.startswith("/"):
+                    href = "https://www.london-stadium.com" + raw_href
+
+        category = forced_category or "Event"
+
+        page_events.append(
+            ParkEvent(
+                title=title,
+                start=event_date,
+                end=event_date,
+                source="London Stadium",
+                location=LONDON_STADIUM_LOCATION,
+                category=category,
+                event_time=event_time,
+                url=href,
+            )
+        )
+
+    return page_events
+
+
+def _find_pagination_links(soup: BeautifulSoup, base_url: str) -> list[str]:
+    """Finds numbered pagination links (e.g. a '2' linking to
+    .../events/all/2.html) and returns their absolute URLs."""
+    from urllib.parse import urlsplit
+    parts = urlsplit(base_url)
+    found = []
+    for a in soup.find_all("a", href=True):
+        text = a.get_text(strip=True)
+        if not text.isdigit():
+            continue
+        href = a["href"]
+        if href.startswith("/"):
+            href = f"{parts.scheme}://{parts.netloc}{href}"
+        elif not href.startswith("http"):
+            continue
+        if "/events/" in href:
+            found.append(href)
+    return found
 
 
 def scrape_london_stadium() -> list[ParkEvent]:
     events: list[ParkEvent] = []
     seen: set[tuple[str, date]] = set()
 
-    for url, forced_category in LONDON_STADIUM_SOURCES:
-        try:
-            lines, soup = fetch_text_lines(url)
-        except requests.RequestException as exc:
-            print(f"[warn] could not fetch {url}: {exc}", file=sys.stderr)
-            continue
+    for base_url, forced_category in LONDON_STADIUM_SOURCES:
+        queue = [base_url]
+        visited: set[str] = set()
 
-        # NOTE: on this site the event title is plain text, not a link - only
-        # "Book now" and "More info" are actual anchors. So instead of
-        # looking up a href by matching the title's text (which never
-        # exists as anchor text here), we walk the "More info" anchors
-        # directly and pull the title out of the same card/container.
-        more_info_links = [
-            a for a in soup.find_all("a", href=True)
-            if a.get_text(strip=True).lower() == "more info"
-        ]
+        while queue and len(visited) < LONDON_STADIUM_MAX_PAGES_PER_SOURCE:
+            url = queue.pop(0)
+            if url in visited:
+                continue
+            visited.add(url)
 
-        # Walk the flattened text lines as before to get date/time/title,
-        # then match each event to the Nth "More info" link in document
-        # order (cards appear in the same order in both the text stream and
-        # the anchor list).
-        info_link_iter = iter(more_info_links)
-
-        i = 0
-        while i < len(lines):
-            m = FULL_DATE_RE.search(lines[i])
-            if not m:
-                i += 1
+            try:
+                lines, soup = fetch_text_lines(url)
+            except requests.RequestException as exc:
+                print(f"[warn] could not fetch {url}: {exc}", file=sys.stderr)
                 continue
 
-            day, month_name, year = m.groups()
-            month = datetime.strptime(month_name[:3], "%b").month
-            event_date = date(int(year), month, int(day))
-
-            event_time = ""
-            title = ""
-            j = i + 1
-            window_end = min(i + 6, len(lines))
-            hit_more_info = False
-            while j < window_end:
-                line = lines[j]
-                low = line.lower()
-                if low == "more info":
-                    hit_more_info = True
-                    j += 1
-                    break
-                if low in SKIP_LINE_VALUES:
-                    j += 1
+            for ev in _parse_stadium_page(lines, soup, forced_category):
+                key = (ev.title, ev.start)
+                if key in seen:
                     continue
-                t_match = TIME_RE.search(line)
-                if t_match and not title:
-                    event_time = t_match.group(1)
-                    j += 1
-                    continue
-                if FULL_DATE_RE.search(line):
-                    break
-                if not title and len(line) > 3:
-                    title = line
-                    j += 1
-                    continue
-                break
+                seen.add(key)
+                events.append(ev)
 
-            i = j
-            if not title:
-                continue
+            for link in _find_pagination_links(soup, url):
+                if link not in visited and link not in queue:
+                    queue.append(link)
 
-            key = (title, event_date)
-            if key in seen:
-                continue
-            seen.add(key)
-
-            href = ""
-            if hit_more_info:
-                next_link = next(info_link_iter, None)
-                if next_link is not None:
-                    raw_href = next_link["href"]
-                    if raw_href.startswith("http"):
-                        href = raw_href
-                    elif raw_href.startswith("/"):
-                        href = "https://www.london-stadium.com" + raw_href
-
-            category = forced_category or "Event"
-
-            events.append(
-                ParkEvent(
-                    title=title,
-                    start=event_date,
-                    end=event_date,
-                    source="London Stadium",
-                    location=LONDON_STADIUM_LOCATION,
-                    category=category,
-                    event_time=event_time,
-                    url=href,
-                )
+        if len(visited) >= LONDON_STADIUM_MAX_PAGES_PER_SOURCE:
+            print(
+                f"[warn] hit the {LONDON_STADIUM_MAX_PAGES_PER_SOURCE}-page safety "
+                f"cap for {base_url} - there may be more events than this scraped.",
+                file=sys.stderr,
             )
 
     return events

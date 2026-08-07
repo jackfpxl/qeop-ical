@@ -10,7 +10,7 @@ REFRESH-INTERVAL;VALUE=DURATION:P7D
 X-PUBLISHED-TTL:P7D
 BEGIN:VEVENT
 UID:f3cb7dc32dea42d690ad147322abf547dab6cdd8@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20260625
 DTEND;VALUE=DATE:20260628
 SUMMARY:🟢 Take That - The Circus Live\, Queen Elizabeth Olympic Park\, Lon
@@ -32,7 +32,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:778fd8442167a596b57d84a7672227ef3ce40475@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20260703
 DTEND;VALUE=DATE:20260706
 SUMMARY:🔴 Metallica - M72 World Tour\, Queen Elizabeth Olympic Park\, Lond
@@ -54,7 +54,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:9c2cfd61f9602a87a718fd763a10cdc4455096f1@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20260724
 DTEND;VALUE=DATE:20260727
 SUMMARY:🔴 Wing Fest London 2026\, Queen Elizabeth Olympic Park\, London E2
@@ -76,7 +76,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:39ad5c17ac97c3a92bb6274632637edb5bce4131@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20260808
 DTEND;VALUE=DATE:20260809
 SUMMARY:🔴 Carabao Cup 1st rnd: West Ham United v Portsmouth\, London Stadi
@@ -100,7 +100,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:7ca7cc5d024892a873457d3349eaa3a3ba619c6c@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20260822
 DTEND;VALUE=DATE:20260824
 SUMMARY:🟢 Queer Frequencies\, Queen Elizabeth Olympic Park\, London E20
@@ -118,7 +118,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:b900d086654b4b5a7ecbfa4e60738ff95976c506@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20260822
 DTEND;VALUE=DATE:20260823
 SUMMARY:🔴 West Ham United v Charlton Athletic\, London Stadium\, Queen Eli
@@ -142,7 +142,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:edb65efc501b4d335e32670d13e998d02508219e@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20260902
 SUMMARY:🔴 West Ham United v Wolverhampton Wanderers\, London Stadium\, Que
@@ -166,7 +166,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:8e04c719e290a9041ae21580d75936a02798af57@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20260905
 DTEND;VALUE=DATE:20260906
 SUMMARY:🔴 West Ham United v Derby County\, London Stadium\, Queen Elizabet
@@ -190,7 +190,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:b7bf25564b6df2a42ad1b341bc9b334678cb18db@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20260912
 SUMMARY:🔴 West Ham United v Wrexham\, London Stadium\, Queen Elizabeth Oly
@@ -214,7 +214,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:2496e00d786202858f5dbb67fbe6d90fc96314f7@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20260912
 DTEND;VALUE=DATE:20260914
 SUMMARY:🟢 Black to the Future\, Queen Elizabeth Olympic Park\, London E20
@@ -233,7 +233,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:c299bae96fa149c48bbed8f7a5a9e5e44343064a@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20261010
 DTEND;VALUE=DATE:20261011
 SUMMARY:🔴 West Ham United v Queens Park Rangers\, London Stadium\, Queen E
@@ -257,7 +257,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:ce5ed0d8fff56e379a751de357dc605c23e0a8cd@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20261024
 DTEND;VALUE=DATE:20261025
 SUMMARY:🔴 West Ham United v Southampton\, London Stadium\, Queen Elizabeth
@@ -281,7 +281,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:cd97984e57544a730d77f58e7d061bcb51a12e34@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261101
 SUMMARY:🔴 West Ham United v West Bromwich Albion\, London Stadium\, Queen 
@@ -305,7 +305,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:6c09cb2b573b22b367ac6751f1a0ab24eebd1163@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20261121
 DTEND;VALUE=DATE:20261122
 SUMMARY:🔴 West Ham United v Preston North End\, London Stadium\, Queen Eli
@@ -329,7 +329,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:4e362860bc1dfefb09ce9be13132c685e3da638b@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 SUMMARY:🔴 West Ham United v Stoke City\, London Stadium\, Queen Elizabeth 
@@ -353,7 +353,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:3641b4b722039fafafc3cda55b161b0d194b164d@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:🔴 West Ham United v Middlesbrough\, London Stadium\, Queen Elizabe
@@ -377,7 +377,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:d4b449a1925d2041a3dfe52fae1c4fdca26b41e9@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261213
 SUMMARY:🔴 West Ham United v Bristol City\, London Stadium\, Queen Elizabet
@@ -401,7 +401,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:d01023f9fdeb811b8568fec83cd3aed2de468882@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20261226
 DTEND;VALUE=DATE:20261227
 SUMMARY:🔴 West Ham United v Norwich City\, London Stadium\, Queen Elizabet
@@ -425,7 +425,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:1db4361a80303c266eb065623d6ebf942eab5880@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20270116
 DTEND;VALUE=DATE:20270117
 SUMMARY:🔴 West Ham United v Swansea City\, London Stadium\, Queen Elizabet
@@ -449,7 +449,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:bce9d3b3461a4bab131189cee3a9eac7b209ca7b@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20270127
 DTEND;VALUE=DATE:20270128
 SUMMARY:🔴 West Ham United v Cardiff City\, London Stadium\, Queen Elizabet
@@ -473,7 +473,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:b63752e2ac1ddea5b4e08b7c3e85d58c45aebc3c@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20270130
 DTEND;VALUE=DATE:20270131
 SUMMARY:🔴 West Ham United v Blackburn Rovers\, London Stadium\, Queen Eliz
@@ -497,7 +497,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:5d06159b0e2f35225d96fb646ae81ac1a53486df@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20270216
 DTEND;VALUE=DATE:20270217
 SUMMARY:🔴 West Ham United v Lincoln City\, London Stadium\, Queen Elizabet
@@ -521,7 +521,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:a80dd985c43e9e9848f1122d4299a7b82b27c0bb@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20270220
 DTEND;VALUE=DATE:20270221
 SUMMARY:🔴 West Ham United v Millwall\, London Stadium\, Queen Elizabeth Ol
@@ -545,7 +545,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:7c32217b28f9d2009cbb0fb28194e17050cf395e@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20270306
 DTEND;VALUE=DATE:20270307
 SUMMARY:🔴 West Ham United v Burnley\, London Stadium\, Queen Elizabeth Oly
@@ -569,7 +569,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:9bf186715c41401ae1d4bad48e108c7de9621364@qeop-traffic-cal
-DTSTAMP:20260803T170244Z
+DTSTAMP:20260807T074812Z
 DTSTART;VALUE=DATE:20270317
 DTEND;VALUE=DATE:20270318
 SUMMARY:🔴 West Ham United v Sheffield United\, London Stadium\, Queen Eliz
@@ -588,6 +588,102 @@ DESCRIPTION:Event Name: West Ham United v Sheffield United\n\nEvent Locati
  site Link: https://www.london-stadium.com/event/2027/march/west-ham-unite
  d-v-sheffield-united.html\n\nMatched terms: attro\, concert\, road closur
  e\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2be6d44a90849e6be5fd18895fd10fa020e2661d@qeop-traffic-cal
+DTSTAMP:20260807T074812Z
+DTSTART;VALUE=DATE:20270403
+DTEND;VALUE=DATE:20270404
+SUMMARY:🔴 West Ham United v Birmingham City\, London Stadium\, Queen Eliza
+ beth Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Birmingham City\n\nEvent Locatio
+ n: London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEven
+ t Start Time: Sat 03 Apr 2027\, 15:00 PM\n\nEvent End Time: Not specified
+  (single-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standi
+ ng notice from London Stadium residents' info: on-site noise is restricte
+ d to 08:00-22:00 during build/de-rig for major events\; sound checks run 
+ from two days before a concert (09:00-22:00)\; venue curfew is 23:00\; ro
+ ad closures for major events are managed under an Anti-Terrorism Traffic 
+ Regulation Order (ATTRO). Confirm exact closures nearer the date at https
+ ://www.london-stadium.com/residents-information/index.html\n\nOther Infor
+ mation: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebs
+ ite Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: attr
+ o\, concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:114bf0cab25b7d607e6691f5755cdf508af85d3c@qeop-traffic-cal
+DTSTAMP:20260807T074812Z
+DTSTART;VALUE=DATE:20270406
+DTEND;VALUE=DATE:20270407
+SUMMARY:🔴 West Ham United v Bolton Wanderers\, London Stadium\, Queen Eliz
+ abeth Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Bolton Wanderers\n\nEvent Locati
+ on: London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEve
+ nt Start Time: Tue 06 Apr 2027\, 19:45 PM\n\nEvent End Time: Not specifie
+ d (single-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Stand
+ ing notice from London Stadium residents' info: on-site noise is restrict
+ ed to 08:00-22:00 during build/de-rig for major events\; sound checks run
+  from two days before a concert (09:00-22:00)\; venue curfew is 23:00\; r
+ oad closures for major events are managed under an Anti-Terrorism Traffic
+  Regulation Order (ATTRO). Confirm exact closures nearer the date at http
+ s://www.london-stadium.com/residents-information/index.html\n\nOther Info
+ rmation: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWeb
+ site Link: https://whufc.freshdesk.com/support/home\n\nMatched terms: att
+ ro\, concert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2d03ec0b8af17b85900b48003b5186d73ef8b9c2@qeop-traffic-cal
+DTSTAMP:20260807T074812Z
+DTSTART;VALUE=DATE:20270417
+DTEND;VALUE=DATE:20270418
+SUMMARY:🔴 West Ham United v Watford\, London Stadium\, Queen Elizabeth Oly
+ mpic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Watford\n\nEvent Location: Londo
+ n Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent Start 
+ Time: Sat 17 Apr 2027\, 15:00 PM\n\nEvent End Time: Not specified (single
+ -day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing notic
+ e from London Stadium residents' info: on-site noise is restricted to 08:
+ 00-22:00 during build/de-rig for major events\; sound checks run from two
+  days before a concert (09:00-22:00)\; venue curfew is 23:00\; road closu
+ res for major events are managed under an Anti-Terrorism Traffic Regulati
+ on Order (ATTRO). Confirm exact closures nearer the date at https://www.l
+ ondon-stadium.com/residents-information/index.html\n\nOther Information: 
+ Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite Link
+ : https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\, conc
+ ert\, road closure\, west ham
+LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
+CATEGORIES:HIGH
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:f7726d5ef032f6725403e9ce4020e616319d5c1e@qeop-traffic-cal
+DTSTAMP:20260807T074812Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:🔴 West Ham United v Portsmouth\, London Stadium\, Queen Elizabeth 
+ Olympic Park\, London E20 2ST
+DESCRIPTION:Event Name: West Ham United v Portsmouth\n\nEvent Location: Lo
+ ndon Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST\n\nEvent Sta
+ rt Time: Sat 01 May 2027\, 12:30 PM\n\nEvent End Time: Not specified (sin
+ gle-day event)\n\nBusyness Factor: High\n\nRoad Restrictions: Standing no
+ tice from London Stadium residents' info: on-site noise is restricted to 
+ 08:00-22:00 during build/de-rig for major events\; sound checks run from 
+ two days before a concert (09:00-22:00)\; venue curfew is 23:00\; road cl
+ osures for major events are managed under an Anti-Terrorism Traffic Regul
+ ation Order (ATTRO). Confirm exact closures nearer the date at https://ww
+ w.london-stadium.com/residents-information/index.html\n\nOther Informatio
+ n: Category: Event\n\n--\n\n\nSource of data: London Stadium\n\nWebsite L
+ ink: https://whufc.freshdesk.com/support/home\n\nMatched terms: attro\, c
+ oncert\, road closure\, west ham
 LOCATION:London Stadium\, Queen Elizabeth Olympic Park\, London E20 2ST
 CATEGORIES:HIGH
 TRANSP:TRANSPARENT

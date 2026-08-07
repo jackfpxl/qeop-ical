@@ -1,0 +1,57 @@
+name: Daily Event Check
+
+on:
+  schedule:
+    # 14:00 UTC every day = 2pm GMT. GMT is always UTC+0, but the UK
+    # actually runs on BST (UTC+1) from late March to late October — so
+    # this stays fixed at 2pm GMT year-round rather than shifting to
+    # track UK local time in summer. Adjust the cron below if you'd
+    # rather it track UK local time instead (would need 13:00 UTC
+    # during BST).
+    - cron: "0 14 * * *"
+  workflow_dispatch: {}  # lets you trigger it manually too, for testing
+
+permissions:
+  contents: write  # needed to commit data/bot_state.json back to the repo
+
+# Shares a concurrency group with every other workflow that touches
+# data/bot_state.json (sync-discord-events, seed-state, run.yml). This
+# ensures two runs can never execute at the same time and both decide
+# independently "this doesn't exist yet" — which is exactly how the SATE
+# Discord Event got duplicated. Queued rather than cancelled, so every
+# triggered run still actually happens, just not concurrently.
+concurrency:
+  group: tea-nextgen-bot-event-state
+  cancel-in-progress: false
+
+jobs:
+  daily-events:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright browser
+        run: playwright install --with-deps chromium
+
+      - name: Run event scraper
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_GUILD_ID: ${{ secrets.DISCORD_GUILD_ID }}
+        run: python3 main.py --task scrape_events
+
+      - name: Commit updated state
+        run: |
+          git config user.name "TEA NextGen Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/bot_state.json
+          git diff --cached --quiet || git commit -m "Update event tracking state [skip ci]"
+          git push

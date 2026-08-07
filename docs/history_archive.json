@@ -1,26 +1,10 @@
 {
-  "114bf0cab25b7d607e6691f5755cdf508af85d3c@qeop-traffic-cal": {
-    "category": "Event",
-    "end": "2027-04-06",
-    "event_time": "19:45 PM",
-    "first_seen": "2026-08-07T07:48:12.349712+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
-    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
-    "restrictions": [
-      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
-    ],
-    "source": "London Stadium",
-    "start": "2027-04-06",
-    "title": "West Ham United v Bolton Wanderers",
-    "uid": "114bf0cab25b7d607e6691f5755cdf508af85d3c@qeop-traffic-cal",
-    "url": "https://whufc.freshdesk.com/support/home"
-  },
   "1db4361a80303c266eb065623d6ebf942eab5880@qeop-traffic-cal": {
     "category": "Event",
     "end": "2027-01-16",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -36,7 +20,7 @@
     "end": "2026-09-13",
     "event_time": "",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "Queen Elizabeth Olympic Park, London E20",
     "restrictions": [],
     "source": "Queen Elizabeth Olympic Park",
@@ -45,44 +29,12 @@
     "uid": "2496e00d786202858f5dbb67fbe6d90fc96314f7@qeop-traffic-cal",
     "url": "https://www.queenelizabetholympicpark.co.uk/themusicisblackfestival/black-to-the-future"
   },
-  "2be6d44a90849e6be5fd18895fd10fa020e2661d@qeop-traffic-cal": {
-    "category": "Event",
-    "end": "2027-04-03",
-    "event_time": "15:00 PM",
-    "first_seen": "2026-08-07T07:48:12.349712+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
-    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
-    "restrictions": [
-      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
-    ],
-    "source": "London Stadium",
-    "start": "2027-04-03",
-    "title": "West Ham United v Birmingham City",
-    "uid": "2be6d44a90849e6be5fd18895fd10fa020e2661d@qeop-traffic-cal",
-    "url": "https://whufc.freshdesk.com/support/home"
-  },
-  "2d03ec0b8af17b85900b48003b5186d73ef8b9c2@qeop-traffic-cal": {
-    "category": "Event",
-    "end": "2027-04-17",
-    "event_time": "15:00 PM",
-    "first_seen": "2026-08-07T07:48:12.349712+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
-    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
-    "restrictions": [
-      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
-    ],
-    "source": "London Stadium",
-    "start": "2027-04-17",
-    "title": "West Ham United v Watford",
-    "uid": "2d03ec0b8af17b85900b48003b5186d73ef8b9c2@qeop-traffic-cal",
-    "url": "https://whufc.freshdesk.com/support/home"
-  },
   "3641b4b722039fafafc3cda55b161b0d194b164d@qeop-traffic-cal": {
     "category": "Event",
     "end": "2026-12-08",
     "event_time": "19:45 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -98,7 +50,7 @@
     "end": "2026-08-08",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -114,7 +66,7 @@
     "end": "2026-11-28",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -130,7 +82,7 @@
     "end": "2027-02-16",
     "event_time": "19:45 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -146,7 +98,7 @@
     "end": "2026-11-21",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -178,7 +130,7 @@
     "end": "2027-03-06",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -194,7 +146,7 @@
     "end": "2026-08-23",
     "event_time": "",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "Queen Elizabeth Olympic Park, London E20",
     "restrictions": [],
     "source": "Queen Elizabeth Olympic Park",
@@ -208,7 +160,7 @@
     "end": "2026-09-05",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -224,7 +176,7 @@
     "end": "2027-03-17",
     "event_time": "19:45 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -256,7 +208,7 @@
     "end": "2027-02-20",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -272,7 +224,7 @@
     "end": "2027-01-30",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -288,7 +240,7 @@
     "end": "2026-09-11",
     "event_time": "20:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -304,7 +256,7 @@
     "end": "2026-08-22",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -320,7 +272,7 @@
     "end": "2027-01-27",
     "event_time": "19:45 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -336,7 +288,7 @@
     "end": "2026-10-10",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -352,7 +304,7 @@
     "end": "2026-10-31",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -368,7 +320,7 @@
     "end": "2026-10-24",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -384,7 +336,7 @@
     "end": "2026-12-26",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -400,7 +352,7 @@
     "end": "2026-12-12",
     "event_time": "15:00 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -416,7 +368,7 @@
     "end": "2026-09-01",
     "event_time": "19:45 PM",
     "first_seen": "2026-08-03T17:01:52.889713+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
+    "last_seen": "2026-08-03T17:02:44.315014+00:00",
     "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
     "restrictions": [
       "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
@@ -442,21 +394,5 @@
     "title": "Take That - The Circus Live",
     "uid": "f3cb7dc32dea42d690ad147322abf547dab6cdd8@qeop-traffic-cal",
     "url": "https://live-qeop.pantheonsite.io/sites/default/files/attachments/Resident%20Letter%20regarding%20Summer%202026%20Events_%20%281%29.pdf"
-  },
-  "f7726d5ef032f6725403e9ce4020e616319d5c1e@qeop-traffic-cal": {
-    "category": "Event",
-    "end": "2027-05-01",
-    "event_time": "12:30 PM",
-    "first_seen": "2026-08-07T07:48:12.349712+00:00",
-    "last_seen": "2026-08-07T07:48:12.349712+00:00",
-    "location": "London Stadium, Queen Elizabeth Olympic Park, London E20 2ST",
-    "restrictions": [
-      "Standing notice from London Stadium residents' info: on-site noise is restricted to 08:00-22:00 during build/de-rig for major events; sound checks run from two days before a concert (09:00-22:00); venue curfew is 23:00; road closures for major events are managed under an Anti-Terrorism Traffic Regulation Order (ATTRO). Confirm exact closures nearer the date at https://www.london-stadium.com/residents-information/index.html"
-    ],
-    "source": "London Stadium",
-    "start": "2027-05-01",
-    "title": "West Ham United v Portsmouth",
-    "uid": "f7726d5ef032f6725403e9ce4020e616319d5c1e@qeop-traffic-cal",
-    "url": "https://whufc.freshdesk.com/support/home"
   }
 }

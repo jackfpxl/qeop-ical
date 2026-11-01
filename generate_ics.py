@@ -57,6 +57,13 @@ HORIZON_DAYS = 365  # ~12 months forward - no reason to cap this as tightly as
                      # the history side; venues do sometimes list events this
                      # far out and there's nothing to gain by hiding them
 
+MAX_EVENT_SPAN_DAYS = 21  # events longer than this are open-ended residencies/
+                          # installations (e.g. ABBA Voyage, a long-running
+                          # Sadler's Wells show) rather than the kind of single
+                          # high-footfall day this calendar is meant to flag -
+                          # they're excluded rather than turned into weeks of
+                          # identical all-day entries
+
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -156,6 +163,14 @@ class ParkEvent:
             url=rec.get("url", ""),
             restrictions=rec.get("restrictions", []),
         )
+
+
+def is_long_running(ev: "ParkEvent") -> bool:
+    """True for open-ended residencies/installations rather than a single
+    high-footfall day - e.g. ABBA Voyage, a long-running Sadler's Wells show.
+    These run for months on end rather than marking out one busy day, so they
+    don't belong in a calendar meant to flag specific high-traffic dates."""
+    return (ev.end - ev.start).days > MAX_EVENT_SPAN_DAYS
 
 
 # ---------------------------------------------------------------------------
@@ -818,6 +833,8 @@ def prune_archive(archive: dict[str, dict]) -> dict[str, dict]:
             continue
         if end_d < cutoff_past or start_d > cutoff_future:
             continue
+        if (end_d - start_d).days > MAX_EVENT_SPAN_DAYS:
+            continue  # long-running residency/installation - see is_long_running()
         kept[uid] = rec
     return kept
 
@@ -950,6 +967,16 @@ def main() -> None:
             "entirely on the existing archive, if any.",
             file=sys.stderr,
         )
+
+    long_running = [ev for ev in fresh_events if is_long_running(ev)]
+    if long_running:
+        print(
+            f"[info] excluding {len(long_running)} long-running "
+            f"residency/installation event(s) (>{MAX_EVENT_SPAN_DAYS} days): "
+            + ", ".join(sorted({ev.title for ev in long_running})),
+            file=sys.stderr,
+        )
+    fresh_events = [ev for ev in fresh_events if not is_long_running(ev)]
 
     # De-duplicate same-title/same-date events seen on more than one venue
     # site, preferring the London Stadium entry (richer notes).
